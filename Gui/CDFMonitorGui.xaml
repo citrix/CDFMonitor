@@ -1,0 +1,416 @@
+﻿<Window x:Class="CDFM.Gui.CDFMonitorGui"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Icon="pack://application:,,,/Resources/cdfmonitor.ico"
+        xmlns:s="clr-namespace:System.Collections;assembly=mscorlib"
+        xmlns:sys="clr-namespace:System;assembly=mscorlib"
+        Title="CDFMonitor" WindowStyle="SingleBorderWindow" Closing="Window_Closing" IsEnabled="True"
+        mc:Ignorable="d" xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" MinHeight="550" MinWidth="750" Height="550" Width="750" Background="#FFEFEFEF" DataContext="{Binding}" AllowDrop="False">
+
+    <Grid Name="grid1" Margin="5,5,5,5" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" ClipToBounds="True">
+        <Grid Name="grid2" Margin="5,5,5,5" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" MinHeight="400" ClipToBounds="True">
+            <TabControl Name="TabControl" Margin="5,5,5,140" HorizontalAlignment="Stretch" VerticalContentAlignment="Stretch" VerticalAlignment="Stretch" SelectionChanged="TabControl_SelectionChanged">
+                <TabItem Header="Activity" Name="Activity" GotFocus="Activity_GotFocus" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+                    <Grid Name="grid5" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" ClipToBounds="True">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="39*" />
+                            <ColumnDefinition Width="0*" />
+                            <ColumnDefinition Width="0*" />
+                            <ColumnDefinition Width="667*" />
+                        </Grid.ColumnDefinitions>
+                        <RadioButton Content="Client: Capture local CDF trace to .etl and parse later for best performance" Height="25" HorizontalAlignment="Left" Margin="22,30,0,0" Click="radioButtonActivityCaptureTrace_Click" Name="radioButtonActivityCaptureTrace" VerticalAlignment="Top" Width="560" FontSize="14.0" Grid.ColumnSpan="4" />
+                        <RadioButton Content="Client: Capture local CDF trace to .csv and parse realtime for trace message monitoring" Height="25" HorizontalAlignment="Left" Margin="22,80,0,0" Click="radioButtonActivityCaptureTraceMessage_Click" Name="radioButtonActivityCaptureTraceMessage" VerticalAlignment="Top" Width="560" FontSize="14.0" Grid.ColumnSpan="4" />
+                        <RadioButton Content="Server: Capture remote trace messages and/or monitor remote CDFMonitor clients" Height="25" HorizontalAlignment="Left" Margin="22,130,0,0" Click="radioButtonActivityCaptureNetworkTraceMessage_Click" Name="radioButtonActivityCaptureNetworkTraceMessage" VerticalAlignment="Top" Width="550" FontSize="14.0" Grid.ColumnSpan="4" />
+                        <RadioButton Content="Server: Remote management of CDFMonitor clients" Height="25" HorizontalAlignment="Left" Margin="22,180,0,0" Click="radioButtonActivityRemoteActivities_Click" Name="radioButtonActivityRemoteActivities" VerticalAlignment="Top" Width="560" FontSize="14.0" Grid.ColumnSpan="4" />
+                        <RadioButton Content="Format trace: Parse existing .etl trace to .csv and optionally filter for trace message" Height="25" HorizontalAlignment="Left" Margin="22,230,0,0" Click="radioButtonActivityParseTraceMessage_Click" Name="radioButtonActivityParseTraceMessage" VerticalAlignment="Top" Width="560" FontSize="14.0" Grid.ColumnSpan="4" />
+                        <TextBox Height="25" HorizontalAlignment="Left" Margin="0,260,0,0" Name="textBoxTraceFileInput" VerticalAlignment="Top" Width="380" LostFocus="textBoxTraceFileInput_LostFocus" IsEnabled="False" Text="{Binding Path=AppSettings.TraceFileInput}" Grid.Column="1" Grid.ColumnSpan="3" />
+                        <Button Content="..." Height="25" HorizontalAlignment="Left" Margin="405.333,260,0,0" Name="buttonSelectTraceFile" VerticalAlignment="Top" Width="41" Click="buttonSelectTraceFile_Click" IsEnabled="False" Grid.Column="3" />
+                        <CheckBox Content="Use source name and path&#x0a;for destination name and path." Height="48" Margin="464.728,260,0,0" Name="checkBoxActivityParseFileNames" VerticalAlignment="Top" IsChecked="{Binding Path=AppSettings.UseTraceSourceForDestination}" Grid.Column="3" HorizontalAlignment="Left" Width="183.272" />
+                        <CheckBox Content="Advanced" Height="48" Margin="575.688,10,0,0" Name="checkBoxActivityAdvancedOptions" VerticalAlignment="Top" IsChecked="{Binding Path=AppSettings.AdvancedOptions}" Grid.Column="3" Checked="checkBoxActivityAdvancedOptions_Checked" Unchecked="checkBoxActivityAdvancedOptions_Checked" HorizontalAlignment="Left" Width="72.312" />
+                    </Grid>
+                </TabItem>
+                <TabItem Header="Modules" Name="Modules" GotFocus="Modules_GotFocus" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" ClipToBounds="True">
+                    <Grid Margin="5,5,5,5" Name="grid7" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" ClipToBounds="True">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition />
+                            <ColumnDefinition Width="57*" />
+                        </Grid.ColumnDefinitions>
+                        <ListView ClipToBounds="True" HorizontalAlignment="Stretch" Margin="143,0,20,90" Name="listViewModules" VerticalAlignment="Stretch" ItemsSource="{Binding Path=ModuleListViewCollection}" Grid.Column="1">
+                            <ListView.View>
+                                <GridView>
+                                    <GridView.Columns>
+                                        <GridViewColumn>
+                                            <GridViewColumn.CellTemplate>
+                                                <DataTemplate>
+                                                    <Grid HorizontalAlignment="Stretch">
+                                                        <CheckBox  x:Name="Checked" IsChecked="{Binding Checked}" />
+                                                    </Grid>
+                                                </DataTemplate>
+                                            </GridViewColumn.CellTemplate>
+                                            <Grid>
+                                                <CheckBox x:Name="ModulesCheckAll" Content="Checked" ToolTip="Select All" Click="ModulesCheckAll_Click" />
+                                            </Grid>
+                                        </GridViewColumn>
+                                        <GridViewColumn Header="Module Name" Width="Auto" DisplayMemberBinding="{Binding ModuleName}" />
+                                        <GridViewColumn Header="Module Guid" Width="Auto" DisplayMemberBinding="{Binding ModuleGuid}" />
+                                    </GridView.Columns>
+                                </GridView>
+                            </ListView.View>
+                        </ListView>
+                        <GroupBox Header="Module Source" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,0,0,0" Name="groupBoxModuleSource" Width="150" Grid.ColumnSpan="2" Height="175">
+                            <Grid Width="150" Height="135">
+                                <RadioButton Content="Config (Current)" Height="31" HorizontalAlignment="Left" Margin="13,5,0,0" Name="radioButtonModulesConfigFile" VerticalAlignment="Top" Width="113" Checked="radioButtonModulesConfigFile_Checked" GroupName="radioModules" />
+                                <RadioButton Content="Local Machine" Height="31" HorizontalAlignment="Left" Margin="13,40,0,0" Name="radioButtonModulesLocalMachine" VerticalAlignment="Top" Width="113" Checked="radioButtonModulesLocalMachine_Checked" GroupName="radioModules" />
+                                <RadioButton Content="File" Height="31" HorizontalAlignment="Left" Margin="13,75,0,0" Name="radioButtonModulesFile" VerticalAlignment="Top" Width="113" Checked="radioButtonModulesFile_Checked" GroupName="radioModules" />
+                                <RadioButton Content="Remote Machine" Height="31" HorizontalAlignment="Left" Margin="13,110,0,0" Name="radioButtonModulesRemoteMachine" VerticalAlignment="Top" Width="113" Checked="radioButtonModulesRemoteMachine_Checked" GroupName="radioModules" />
+                            </Grid>
+                        </GroupBox>
+                        <Button Content="Save to .ctl" Height="25" HorizontalAlignment="Left" Margin="0,201.04,0,0" Name="buttonSaveToCtl" VerticalAlignment="Top" Width="75" Click="buttonSaveToCtl_Click" Grid.ColumnSpan="2" />
+                        <Label TabIndex="-1" Content="Module Path:" Height="28" HorizontalAlignment="Left" Margin="57,0,0,47" Name="label23" VerticalAlignment="Bottom" Grid.Column="1" />
+                        <TextBox Height="25" HorizontalAlignment="Stretch" Margin="143,0,76,50" Name="textBoxModulePath" VerticalAlignment="Bottom" Text="{Binding Path=AppSettings.ModulePath}" Grid.Column="1" />
+                        <Button Content="..." Height="25" HorizontalAlignment="Right" Margin="0,0,20,50" Name="buttonModulesLoad" VerticalAlignment="Bottom" Width="41" Click="buttonModuleLoad_Click" Grid.Column="1" />
+                        <Label TabIndex="-1" Content="Module Filter:" Height="28" HorizontalAlignment="Left" Margin="54,0,0,10" Name="label14" VerticalAlignment="Bottom" Grid.Column="1" />
+                        <TextBox Height="25" HorizontalAlignment="Stretch" Margin="143,0,128,10" Name="textBoxModulesFilter" VerticalAlignment="Bottom" Text="{Binding Path=AppSettings.ModuleFilter}" TextChanged="textBoxModulesFilter_TextChanged" Grid.Column="1" />
+                        <CheckBox Content="Enable modules&#x0a;by filter (atypical)" Name="checkBoxModuleEnableByFilter" IsChecked="{Binding Path=AppSettings.ModuleEnableByFilter}" Height="38" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="113.272" Click="checkBoxModuleEnableByFilter_Click" Grid.Column="1" />
+                    </Grid>
+                </TabItem>
+                <TabItem Header="Logging" Name="Logging" GotFocus="Logging_GotFocus" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" ClipToBounds="True">
+                    <Grid Margin="5,5,5,5" HorizontalAlignment="Stretch" VerticalAlignment="Top" ClipToBounds="True">
+
+                        <GroupBox Header="Log File Options" HorizontalAlignment="Left" Margin="15,151,0,0" Name="groupBox1" Width="624" Grid.ColumnSpan="3" Height="145">
+                            <Grid Width="603" Height="135">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="231*" />
+                                    <ColumnDefinition Width="163*" />
+                                    <ColumnDefinition Width="209*" />
+                                </Grid.ColumnDefinitions>
+                                <CheckBox Content="Overwrite Log File (Circular)" Height="16" HorizontalAlignment="Left" Margin="15,10,0,0" Name="checkBoxOverwriteLogFile" VerticalAlignment="Top" IsChecked="{Binding Path=AppSettings.LogFileOverWrite}" />
+                                <TextBox Height="22" HorizontalAlignment="Left" Margin="15,41,0,0" Name="textBoxLogFileCount" VerticalAlignment="Top" Width="43" Text="{Binding Path=AppSettings.LogFileMaxCount}" DataContext="{Binding}" />
+                                <Label Content="Maximum Number of Log Files" Height="33" HorizontalAlignment="Left" Margin="59,37,0,0" Name="label3" VerticalAlignment="Top" Width="172" />
+                                <TextBox Height="22" HorizontalAlignment="Left" Margin="15,80,0,0" Name="textBoxLogFileMaxSize" VerticalAlignment="Top" Width="43" Text="{Binding Path=AppSettings.LogFileMaxSize}" />
+                                <Label Content="Size of Log Files in MB&#x0a;0 is unlimited" Height="42" HorizontalAlignment="Left" Margin="57,71,0,0" Name="label4" VerticalAlignment="Top" Width="174" />
+                                <CheckBox Content="Log Match Detail" Height="16" Margin="13,10,0,0" Name="checkBoxLogMatchDetail" Grid.Column="1" IsChecked="{Binding Path=AppSettings.LogMatchDetail}" HorizontalAlignment="Left" VerticalAlignment="Top" Width="128" />
+                                <CheckBox Content="Log File Auto Flush" Height="16" Margin="13,40,0,0" Name="checkBoxLogFileAutoFlush" Grid.Column="1" IsChecked="{Binding Path=AppSettings.LogFileAutoFlush}" HorizontalAlignment="Left" VerticalAlignment="Top" />
+                                <CheckBox Content="Log Match Only" Margin="13,70,0,0" Name="checkBoxLogMatchOnly" Grid.Column="1" IsChecked="{Binding Path=AppSettings.LogMatchOnly}" HorizontalAlignment="Left" Height="16" VerticalAlignment="Top" Click="checkBoxLogMatchOnly_Checked" />
+                                <CheckBox Content="Log Buffer On Match" Height="16" HorizontalAlignment="Left" IsChecked="{Binding Path=AppSettings.LogBufferOnMatch}" Margin="13,100,0,0" Name="checkBoxLogBufferOnMatch" VerticalAlignment="Top" Grid.Column="1" />
+                                <CheckBox Content="Use Target Time" Height="16" Margin="25,10,0,0" Name="tcheckBoxUseTargetTime" IsChecked="{Binding Path=AppSettings.UseTargetTime}" Grid.Column="2" HorizontalAlignment="Left" VerticalAlignment="Top" />
+                                <CheckBox Content="Log To Console (Output Tab)" Height="16" Margin="25,40,0,0" Name="checkBoxLogToConsole" Grid.Column="2" IsChecked="{Binding Path=AppSettings.LogToConsole}" HorizontalAlignment="Left" VerticalAlignment="Top" />
+                                <CheckBox Content="Monitor Process Creation" Height="16" Margin="25,70,0,0" Name="checkBoxMonitorProcess" VerticalAlignment="Top" IsChecked="{Binding Path=AppSettings.MonitorProcesses}" Grid.Column="2" HorizontalAlignment="Left" Width="168" />
+                                <CheckBox Content="Debug (Not Normally Used)" Height="16" Margin="25,100,0,0" Name="checkBoxDebug" VerticalAlignment="Top" IsChecked="{Binding Path=AppSettings.Debug}" Grid.Column="2" HorizontalAlignment="Left" Width="168" />
+                            </Grid>
+                        </GroupBox>
+                        <Label TabIndex="-1" Content="CDFMonitor Log File Name:" Height="29" HorizontalAlignment="Left" Margin="6,20,0,0" Name="label5" VerticalAlignment="Top" Width="166" />
+                        <TextBox Height="25" HorizontalAlignment="Left" Margin="179,20,0,0" Name="textBoxLoggingLogFileName" VerticalAlignment="Top" Text="{Binding Path=AppSettings.LogFileName}" DataContext="{Binding}" Grid.ColumnSpan="3" Width="378" />
+                        <Button Content="..." Height="25" Margin="570,18,0,0" Name="buttonLoggingSelectLogFile" VerticalAlignment="Top" Click="buttonLoggingSelectLogFile_Click" HorizontalAlignment="Left" Width="41" />
+                        <Label TabIndex="-1" Content="Output Trace File Name&#x0a; (.etl, .csv):" Height="46" HorizontalAlignment="Left" Margin="7,66,0,0" Name="label6" VerticalAlignment="Top" Width="167" />
+                        <TextBox Height="25" HorizontalAlignment="Left" Margin="179,70,0,0" Name="textBoxLoggingTraceFileName" VerticalAlignment="Top" Text="{Binding Path=AppSettings.TraceFileOutput}" Grid.ColumnSpan="3" Width="378" />
+                        <Button Content="..." Height="25" Margin="570,68,0,0" Name="buttonLoggingTraceFile" VerticalAlignment="Top" Click="buttonLoggingSelectTraceFile_Click" HorizontalAlignment="Left" Width="41" />
+                        <Label TabIndex="-1" Content="Log File Server:" Height="29" HorizontalAlignment="Left" Margin="81,120,0,0" Name="label19" VerticalAlignment="Top" Width="93" />
+                        <TextBox Grid.ColumnSpan="3" Height="25" HorizontalAlignment="Left" Margin="179,120,0,0" Name="textBoxLoggingLogFileServer" Text="{Binding Path=AppSettings.LogFileServer}" VerticalAlignment="Top" Width="378" />
+                        <Button Content="Verify" Height="25" HorizontalAlignment="Left" Margin="570,120,0,0" Name="buttonLoggingVerify" VerticalAlignment="Top" Width="86" Click="buttonLoggingVerify_Click" />
+                    </Grid>
+                </TabItem>
+                <TabItem Header="Network" Name="Network" GotFocus="Network_GotFocus" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" ClipToBounds="True">
+                    <Grid Margin="5,5,5,5" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" ClipToBounds="True">
+                        <CheckBox Content="Enable Udp Client" Height="16" HorizontalAlignment="Left" Margin="10,28,0,0" Name="checkBoxNetworkUdpClientEnabled" IsChecked="{Binding Path=AppSettings.UdpClientEnabled}" VerticalAlignment="Top" Width="120" />
+                        <CheckBox Content="Enable Udp Ping" Height="16" HorizontalAlignment="Left" Margin="140,28,0,0" x:Name="checkBoxNetworkUdpPingOnly" IsChecked="{Binding AppSettings.UdpPingEnabled}" VerticalAlignment="Top" Width="120" />
+                        <Label TabIndex="-1" Content="Udp Server:" Height="28" HorizontalAlignment="Left" Margin="50.77,60,0,0" Name="label24" VerticalAlignment="Top" />
+                        <TextBox Height="23" HorizontalAlignment="Left" Margin="129,60,0,0" Name="textBoxNetworkUdpServer"  Text="{Binding Path=AppSettings.UdpServer}" VerticalAlignment="Top" Width="114" />
+                        <Label TabIndex="-1" Content="Udp Ping Server:" Height="28" HorizontalAlignment="Left" Margin="24,101,0,0" x:Name="label24_Copy" VerticalAlignment="Top" />
+                        <TextBox Height="23" HorizontalAlignment="Left" Margin="129,101,0,0" x:Name="textBoxNetworkUdpPingServer"  Text="{Binding AppSettings.UdpPingServer}" VerticalAlignment="Top" Width="114" />
+
+                        <Label TabIndex="-1" Content="Udp Server Port:" Height="32" HorizontalAlignment="Left" Margin="24,144,0,0" Name="label25" VerticalAlignment="Top" Width="99" />
+                        <TextBox Height="23" HorizontalAlignment="Left" Margin="129,144,0,0" Name="textBoxNetworkUdpServerPort" Text="{Binding Path=AppSettings.UdpServerPort}" VerticalAlignment="Top" Width="65" />
+                        <Label TabIndex="-1" Content="Udp Client Port:" Height="32" HorizontalAlignment="Left" Margin="24,184,0,0" Name="label26" VerticalAlignment="Top" Width="99" />
+                        <TextBox Height="23" HorizontalAlignment="Left" Margin="129,184,0,0" Name="textBoxNetworkUdpClientPort" Text="{Binding Path=AppSettings.UdpClientPort}" VerticalAlignment="Top" Width="65" />
+
+                        <Label TabIndex="-1" Content="Udp Ping Timer:" Height="32" HorizontalAlignment="Left" Margin="24,224,0,0" Name="label27" VerticalAlignment="Top" Width="99" />
+                        <TextBox Height="23" HorizontalAlignment="Left" Margin="129,224,0,0" Name="textBoxUdpPingTimer" Text="{Binding Path=AppSettings.UdpPingTimer}" VerticalAlignment="Top" Width="65" />
+                        <Button Content="Verify" Height="23" HorizontalAlignment="Left" Margin="24,272.96,0,0" Name="buttonNetworkVerify" Click="buttonNetworkVerify_Click" VerticalAlignment="Top" Width="75" />
+                        <Button Content="Clear List" Height="23" HorizontalAlignment="Left" Margin="129,272.96,0,0" Name="buttonNetworkClearList" Click="buttonNetworkClearList_Click" VerticalAlignment="Top" Width="75" />
+
+                        <GroupBox Header="Udp clients connecting to this server" Margin="258,10,10,34.08">
+                            <ListView Name="listViewNetworkUdpClients" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"
+                                      ItemsSource="{Binding UdpClientsListViewCollection}"
+                                      GridViewColumnHeader.Click="listViewNetworkUdpClientsColumnHeaderClickedHandler">
+                                <ListView.CommandBindings>
+                                    <CommandBinding Command="ApplicationCommands.Copy" CanExecute="CopyCmdCanExecuteListView" Executed="CopyCmdExecutedListView" />
+                                </ListView.CommandBindings>
+                                <ListView.ContextMenu>
+                                    <ContextMenu HasDropShadow="True">
+                                        <MenuItem Header="Copy" Command="ApplicationCommands.Copy" CommandTarget="{Binding ElementName=listViewNetworkUdpClients}" />
+                                    </ContextMenu>
+                                </ListView.ContextMenu>
+                                <ListView.View>
+                                    <GridView>
+                                        <GridView.Columns>
+                                            <GridViewColumn Header="ClientName" Width="Auto" DisplayMemberBinding="{Binding ClientName}" />
+                                            <GridViewColumn Header="ClientActivity" Width="Auto" DisplayMemberBinding="{Binding ClientActivity}" />
+                                            <GridViewColumn Header="ClientPingTime" Width="Auto" DisplayMemberBinding="{Binding ClientPingTime}" />
+                                            <GridViewColumn Header="UdpCounter" Width="Auto" DisplayMemberBinding="{Binding UdpCounter}" />
+                                            <GridViewColumn Header="TracesPerSecond" Width="Auto" DisplayMemberBinding="{Binding TracesPerSecond}" />
+                                            <GridViewColumn Header="MatchedEvents" Width="Auto" DisplayMemberBinding="{Binding MatchedEvents}" />
+                                            <GridViewColumn Header="MissedMatchedEvents" Width="Auto" DisplayMemberBinding="{Binding MissedMatchedEvents}" />
+                                            <GridViewColumn Header="MaxQueueMissedEvents" Width="Auto" DisplayMemberBinding="{Binding MaxQueueMissedEvents}" />
+                                            <GridViewColumn Header="ParserQueue" Width="Auto" DisplayMemberBinding="{Binding ParserQueue}" />
+                                            <GridViewColumn Header="ProcessedEvents" Width="Auto" DisplayMemberBinding="{Binding ProcessedEvents}" />
+                                            <GridViewColumn Header="AverageProcessCpu" Width="Auto" DisplayMemberBinding="{Binding AvgProcessCpu}" />
+                                            <GridViewColumn Header="CurrentProcessCpu" Width="Auto" DisplayMemberBinding="{Binding CurrentProcessCpu}" />
+
+                                            <!--<GridViewColumn Header="Average Machine Cpu" Width="Auto" DisplayMemberBinding="{Binding AvgMachineCpu}" />-->
+                                            <GridViewColumn Header="CurrentMachineCpu" Width="Auto" DisplayMemberBinding="{Binding CurrentMachineCpu}" />
+
+                                            <GridViewColumn Header="Duration" Width="Auto" DisplayMemberBinding="{Binding Duration}" />
+                                        </GridView.Columns>
+                                    </GridView>
+                                </ListView.View>
+                            </ListView>
+                        </GroupBox>
+                    </Grid>
+                </TabItem>
+                <TabItem Header="Match" Name="Match" GotFocus="Match_GotFocus" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" ClipToBounds="True">
+                    <Grid Margin="5,5,5,5" HorizontalAlignment="Stretch" VerticalAlignment="Top" ClipToBounds="True">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="144*" />
+                            <ColumnDefinition Width="519*" />
+                        </Grid.ColumnDefinitions>
+                        <Label TabIndex="-1" Content="Tmf Servers:" Height="25" HorizontalAlignment="Left" Margin="78.167,15,0,0" Name="label7" VerticalAlignment="Top" Width="73" RenderTransformOrigin="0.808,0.522" />
+                        <TextBox Height="25" HorizontalAlignment="Stretch" Margin="15,15,75,0" Name="textBoxMatchTmfServer" Text="{Binding Path=AppSettings.TmfServers}" VerticalAlignment="Top" Grid.Column="1" />
+                        <Button Content="..." Height="25" HorizontalAlignment="Right" Margin="441,15,20,0" Name="buttonMatchTmfServerBrowse" VerticalAlignment="Top" Width="41" Grid.Column="1" Click="buttonMatchTmfServerBrowse_Click" />
+                        <Label TabIndex="-1" Content="Tmf Cache Directory:" Height="25" HorizontalAlignment="Left" Margin="37,60,0,0" Name="label8" VerticalAlignment="Top" Width="124" Grid.ColumnSpan="2" />
+                        <TextBox Height="25" HorizontalAlignment="Stretch" Margin="15,60,75,0" Name="textBoxMatchTmfCacheDir" Text="{Binding Path=AppSettings.TmfCacheDir}" VerticalAlignment="Top" Grid.Column="1" />
+                        <Button Content="..." Height="25" HorizontalAlignment="Right" Margin="441,60,20,0" Name="buttonMatchTmfCacheDirBrowse" VerticalAlignment="Top" Width="41" Grid.Column="1" Click="buttonMatchTmfCacheDirBrowse_Click" />
+                        <Button Content="Verify" Height="25" HorizontalAlignment="Left" Margin="49,98,0,0" Name="buttonMatchVerify" VerticalAlignment="Top" Width="100" Click="buttonMatchVerify_Click" />
+                        <CheckBox Content="Write Event&#x0a;to Eventlog" Height="32" Margin="15,98,0,0" Name="checkBoxMatchWriteEvent" VerticalAlignment="Top" IsChecked="{Binding Path=AppSettings.WriteEvent}" Grid.Column="1" HorizontalAlignment="Left" Width="102.272" />
+                        <Label Content="Event Max Count:" Height="28" HorizontalAlignment="Left" Margin="134,96,0,0" Name="labelEventMaxCount" TabIndex="-1" VerticalAlignment="Top" Grid.Column="1" />
+                        <TextBox Height="23" HorizontalAlignment="Left" Margin="243,98,0,0" Name="textBoxEventMaxCount" Text="{Binding Path=AppSettings.EventMaxCount}" VerticalAlignment="Top" Width="48" Grid.Column="1" />
+                        <Label Content="Event Throttle:&#x0a;(seconds)" Grid.Column="1" Height="48" HorizontalAlignment="Left" Margin="312,90,0,0" Name="labelEventThrottle" TabIndex="-1" VerticalAlignment="Top" />
+                        <TextBox DataContext="{Binding}" Grid.Column="1" Height="23" HorizontalAlignment="Left" Margin="407.767,98,0,0" Name="textBoxEventThrottle" Text="{Binding Path=AppSettings.EventThrottle}" VerticalAlignment="Top" Width="48" />
+                        <Label TabIndex="-1" Content="RegexPattern:" Height="30" HorizontalAlignment="Left" Margin="73.167,135,0,0" Name="label1" VerticalAlignment="Top" Width="93" Grid.ColumnSpan="2" />
+                        <Button Content="Validate" Height="21" HorizontalAlignment="Left" Margin="68,171,0,0" Name="buttonMatchValidate" VerticalAlignment="Top" Width="81" Click="buttonMatchValidate_Click" />
+                        <TextBox Height="80" HorizontalAlignment="Stretch" Margin="15,135,25,0" Name="textBoxRegexPattern" VerticalAlignment="Top" GotFocus="textBoxRegexPattern_GotFocus" Text="{Binding Path=AppSettings.RegexPattern}" VerticalScrollBarVisibility="Auto" TextWrapping="Wrap" Grid.Column="1" />
+                        <Label TabIndex="-1" Content="RegexPattern Test Trace:" Height="28" HorizontalAlignment="Left" Margin="15.167,225,0,0" Name="label2" VerticalAlignment="Top" Width="151" Grid.ColumnSpan="2" />
+                        <Button Content="Test" Height="21" HorizontalAlignment="Left" Margin="68,258,0,0" Name="buttonMatchTest" VerticalAlignment="Top" Width="81" Click="buttonMatchTest_Click" />
+                        <TextBox Height="80" HorizontalAlignment="Stretch" Margin="15,225,25,0" Name="textBoxRegexTestText" VerticalAlignment="Top" AcceptsReturn="True" UIElement.GotFocus="textBoxRegexTestText_GotFocus" TextWrapping="Wrap" AcceptsTab="True" VerticalScrollBarVisibility="Auto" Grid.Column="1" />
+                    </Grid>
+                </TabItem>
+                <TabItem Header="Action" Name="Action" GotFocus="Action_GotFocus" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" ClipToBounds="True">
+                    <Grid Margin="5,5,5,5" HorizontalAlignment="Stretch" VerticalAlignment="Top" ClipToBounds="True">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="198*" />
+                            <ColumnDefinition Width="465*" />
+                        </Grid.ColumnDefinitions>
+                        <Label TabIndex="-1" Content="Execute on match:" Height="28" HorizontalAlignment="Left" Margin="22,24,0,0" Name="eventCommandLabel" VerticalAlignment="Top" />
+                        <TextBox Height="54" VerticalScrollBarVisibility="Auto" TextWrapping="Wrap" Margin="134,26,151,0" Name="textBoxActionEventCommand" VerticalAlignment="Top" Grid.ColumnSpan="2" Text="{Binding Path=AppSettings.EventCommand}" />
+                        <Button Content="..." Height="25" HorizontalAlignment="Right" Margin="0,26,90,0" Name="buttonSelectEventCommand" VerticalAlignment="Top" Width="44" Click="buttonSelectEventCommand_Click" Grid.Column="1" />
+                        <CheckBox Content="Wait for command&#x0a; to complete" Height="39" Margin="0,57,6,0" Name="eventCommandWait" VerticalAlignment="Top" IsChecked="{Binding Path=AppSettings.EventCommandWait}" Grid.Column="1" HorizontalAlignment="Right" Width="128" />
+                        <Button Content="Verify" Grid.Column="1" Height="25" Margin="0,97,151,0" Name="buttonActionVerify" VerticalAlignment="Top" Click="buttonActionVerify_Click" HorizontalAlignment="Right" Width="100" />
+                        <Label TabIndex="-1" Content="Startup Command:" Height="28" HorizontalAlignment="Left" Margin="19,142,0,0" Name="label15" VerticalAlignment="Top" />
+                        <TextBox Grid.ColumnSpan="2" Height="54" VerticalScrollBarVisibility="Auto" TextWrapping="Wrap" Margin="134,144,150,0" Name="textBoxActionStartupCommand" Text="{Binding Path=AppSettings.StartupCommand}" VerticalAlignment="Top" />
+                        <Button Content="..." Grid.Column="1" Height="25" Margin="0,144,89,0" Name="buttonActionSelectStartupCommand" VerticalAlignment="Top" Click="buttonActionSelectStartupCommand_Click" HorizontalAlignment="Right" Width="44" />
+                        <CheckBox Content="Wait for command&#x0a;  to complete" Height="39" IsChecked="{Binding Path=AppSettings.StartupCommandWait}" Margin="0,175,5,0" Name="checkBoxActionStartupCommandWait" VerticalAlignment="Top" Grid.Column="1" HorizontalAlignment="Right" Width="128" />
+                        <Label TabIndex="-1" Content="Shutdown Command:" Height="28" HorizontalAlignment="Left" Margin="7,228,0,0" Name="label16" VerticalAlignment="Top" />
+                        <TextBox Grid.ColumnSpan="2" Height="54" VerticalScrollBarVisibility="Auto" TextWrapping="Wrap" Margin="135,230,150,0" Name="textBoxActionShutdownCommand" Text="{Binding Path=AppSettings.ShutdownCommand}" VerticalAlignment="Top" />
+                        <Button Content="..." Grid.Column="1" Height="23" Margin="0,230,89,0" Name="buttonActionSelectShutdownCommand" VerticalAlignment="Top" Click="buttonActionSelectShutdownCommand_Click" HorizontalAlignment="Right" Width="44" />
+                        <CheckBox Content="Wait for command&#x0a;  to complete" Height="39" HorizontalAlignment="Right" IsChecked="{Binding Path=AppSettings.ShutdownCommandWait}" Margin="0,259,5,0" Name="checkBoxActionShutdownCommandWait" VerticalAlignment="Top" Width="128" Grid.Column="1" />
+                    </Grid>
+                </TabItem>
+                <TabItem Header="Notify" Name="Notify" GotFocus="Notify_GotFocus" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" ClipToBounds="True">
+                    <Grid Margin="5,5,5,5" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" ClipToBounds="True">
+                        <Label TabIndex="-1" Content="SMTP Server:" Height="28" HorizontalAlignment="Left" Margin="22,15,0,0" Name="labelSmtpServer" VerticalAlignment="Top" />
+                        <TextBox Height="23" HorizontalAlignment="Left" Margin="109,17,0,0" Name="textBoxSmtpServer" VerticalAlignment="Top" Width="253" Text="{Binding Path=AppSettings.SmtpServer}" />
+                        <CheckBox Content="Use SSL" Height="16" HorizontalAlignment="Left" Margin="400,17,0,0" Name="checkBoxSmtpSsl" VerticalAlignment="Top" IsChecked="{Binding Path=AppSettings.SmtpSsl}" />
+                        <Label TabIndex="-1" Content="To:" Height="28" HorizontalAlignment="Left" Margin="75,57,0,0" Name="labelSmtpSendTo" VerticalAlignment="Top" />
+                        <TextBox Height="23" HorizontalAlignment="Left" Margin="109,59,0,0" Name="textBoxSmtpSendTo" VerticalAlignment="Top" Width="253" Text="{Binding Path=AppSettings.SmtpSendTo}" />
+                        <Label TabIndex="-1" Content="Port:" Height="28" HorizontalAlignment="Left" Margin="400,62,0,0" Name="labelSmtpPort" VerticalAlignment="Top" />
+                        <TextBox Height="23" HorizontalAlignment="Left" Margin="444,62,0,0" Name="textBoxSmtpPort" VerticalAlignment="Top" Width="41" Text="{Binding Path=AppSettings.SmtpPort}" />
+                        <Label TabIndex="-1" Content="From:" Height="28" HorizontalAlignment="Left" Margin="61,100,0,0" Name="labelSmtpSendFrom" VerticalAlignment="Top" />
+                        <TextBox Height="23" HorizontalAlignment="Left" Margin="109,102,0,0" Name="textBoxSmtpSendFrom" VerticalAlignment="Top" Width="253" Text="{Binding Path=AppSettings.SmtpSendFrom}" />
+                        <Label TabIndex="-1" Content="User:" Height="28" HorizontalAlignment="Left" Margin="400,100,0,0" Name="labelSmtpUser" VerticalAlignment="Top" />
+                        <TextBox Height="23" HorizontalAlignment="Left" Margin="444,102,0,0" Name="textBoxSmtpUser" VerticalAlignment="Top" Width="143" Text="{Binding Path=AppSettings.SmtpUser}" />
+                        <Label TabIndex="-1" Content="Subject:" Height="28" HorizontalAlignment="Left" Margin="49,143,0,0" Name="labelSmtpSubject" VerticalAlignment="Top" />
+                        <TextBox Height="23" HorizontalAlignment="Left" Margin="109,145,0,0" Name="textBoxSmtpSubject" VerticalAlignment="Top" Width="253" Text="{Binding Path=AppSettings.SmtpSubject}" />
+                        <Label TabIndex="-1" Content="Password:" Height="28" HorizontalAlignment="Left" Margin="375,142,0,0" Name="labelSmtpPassword" VerticalAlignment="Top" />
+                        <TextBox Height="23" HorizontalAlignment="Left" Margin="444,145,0,0" Name="textBoxSmtpPassword" VerticalAlignment="Top" Width="143" Text="{Binding Path=AppSettings.SmtpPassword}" />
+                        <Label TabIndex="-1" Content="Note: Password stored and viewed in clear text." Height="28" HorizontalAlignment="Left" Margin="375,174,0,0" Name="label21" VerticalAlignment="Top" />
+                        <Button Content="Verify" Height="24" HorizontalAlignment="Left" Margin="109,211,0,0" Name="buttonNotifyVerify" VerticalAlignment="Top" Width="100" Click="buttonNotifyVerify_Click" />
+                    </Grid>
+                </TabItem>
+                <TabItem Header="Upload" Name="Upload" GotFocus="Upload_GotFocus" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" ClipToBounds="True">
+                    <Grid Margin="5,5,5,5" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" ClipToBounds="True">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="121*" />
+                            <ColumnDefinition Width="53*" />
+                        </Grid.ColumnDefinitions>
+                        <Label TabIndex="-1" Content="URL Site:" Height="28" HorizontalAlignment="Left" Margin="20,18,0,0" Name="labelUrlSite" VerticalAlignment="Top" />
+                        <TextBox Height="23" HorizontalAlignment="Left" Margin="85,20,0,0" Name="textBoxUrlSite" Text="{Binding Path=AppSettings.UrlSite}" VerticalAlignment="Top" Width="468" Grid.ColumnSpan="2" />
+                        <Label TabIndex="-1" Content="URL Files:" Height="28" HorizontalAlignment="Left" Margin="17,54,0,0" Name="labelUrlFiles" VerticalAlignment="Top" />
+                        <TextBox Height="80" HorizontalAlignment="Left" Margin="85,56,0,0" Name="textBoxUrlFiles" Text="{Binding Path=AppSettings.UrlFiles}" VerticalAlignment="Top" Width="465" Grid.ColumnSpan="2" />
+                        <Label TabIndex="-1" Content="User:" Height="28" HorizontalAlignment="Left" Margin="41,147,0,0" Name="labelUrlUser" VerticalAlignment="Top" />
+                        <TextBox Height="23" HorizontalAlignment="Left" Margin="85,149,0,0" Name="textBoxUrlUser" Text="{Binding Path=AppSettings.UrlUser}" VerticalAlignment="Top" Width="129" />
+                        <Label TabIndex="-1" Content="Password:" Height="28" HorizontalAlignment="Left" Margin="14,181,0,0" Name="labelUrlPassword" VerticalAlignment="Top" />
+                        <TextBox Height="23" HorizontalAlignment="Left" Margin="85,183,0,0" Name="textBoxUrlPassword" Text="{Binding Path=AppSettings.UrlPassword}" VerticalAlignment="Top" Width="129" />
+                        <Label TabIndex="-1" Content="Note: Password stored and viewed in clear text." Height="28" HorizontalAlignment="Left" Margin="229,183,0,0" Name="label20" VerticalAlignment="Top" Grid.ColumnSpan="2" />
+                        <Button Content="Verify" Height="25" HorizontalAlignment="Left" Margin="87,230,0,0" Name="buttonUploadVerify" VerticalAlignment="Top" Width="100" Click="buttonUploadVerify_Click" />
+                        <Button Content="Upload" Height="25" HorizontalAlignment="Left" Margin="229,230,0,0" Name="buttonUploadUpload" VerticalAlignment="Top" Width="100" Click="buttonUploadUpload_Click" />
+                    </Grid>
+                </TabItem>
+                <TabItem Header="Remote" Name="Remote" GotFocus="Remote_GotFocus" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" ClipToBounds="True">
+
+                    <Grid Margin="5,5,5,5" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" ClipToBounds="True" AllowDrop="True">
+                        <Grid ClipToBounds="True" Margin="156,149,6,0" MinWidth="514" MinHeight="150" Name="gridRemoteOptions">
+                            <Label TabIndex="-1" Content="Deploy Source Path:" Height="29" HorizontalAlignment="Left" Margin="21,0,0,97" Name="label9" VerticalAlignment="Bottom" Width="124" />
+                            <TextBox Height="25" HorizontalAlignment="Stretch" Margin="140,0,72,100" Name="textBoxRemoteDeployPath" VerticalAlignment="Bottom" ClipToBounds="True" Text="{Binding Path=AppSettings.DeployPath}" />
+                            <Button Content="..." Height="25" HorizontalAlignment="Right" Margin="0,0,20,100" Name="buttonRemoteDeployPathBrowse" VerticalAlignment="Bottom" Width="41" Click="buttonRemoteDeployPathBrowse_Click" />
+                            <Label TabIndex="-1" Content="Gather Destination Path:" Height="29" HorizontalAlignment="Left" Margin="0,0,0,59" Name="label10" VerticalAlignment="Bottom" Width="145" />
+                            <TextBox Height="25" HorizontalAlignment="Stretch" Margin="140,0,72,60" Name="textBoxRemoteGatherPath" VerticalAlignment="Bottom" ClipToBounds="True" Text="{Binding Path=AppSettings.GatherPath}" />
+                            <Button Content="..." Height="25" HorizontalAlignment="Right" Margin="0,0,20,60" Name="buttonRemoteGatherPathBrowse" VerticalAlignment="Bottom" Width="41" Click="buttonRemoteGatherPathBrowse_Click" />
+                            <Label TabIndex="-1" Content="Remote Machine File:" Height="29" HorizontalAlignment="Left" Margin="16,0,0,20" Name="label22" VerticalAlignment="Bottom" Width="125" />
+                            <TextBox Height="25" HorizontalAlignment="Stretch" Margin="140,0,72,20" Name="textBoxRemoteMachinesPath" VerticalAlignment="Bottom" Text="{Binding Path=AppSettings.RemoteMachinesPath}" />
+                            <Button Content="..." Height="25" HorizontalAlignment="Right" Margin="0,0,20,20" Name="buttonRemoteLoad" VerticalAlignment="Bottom" Width="41" Click="buttonRemoteLoad_Click" />
+                        </Grid>
+
+                        <GroupBox Header="Remote Actions" Height="304" HorizontalAlignment="Left" Margin="6,0,0,0" Name="groupBoxRemoteAction" VerticalAlignment="Top" Width="150">
+                            <Grid Height="286" Name="gridRemoteActions">
+                                <RadioButton Content="Check" Height="25" HorizontalAlignment="Left" Margin="15,10,0,0" Name="radioButtonRemoteCheck" VerticalAlignment="Top" Width="100" Checked="radioButtonRemoteActivity_Checked" GroupName="radioRemote" />
+                                <RadioButton Content="Deploy" Height="25" HorizontalAlignment="Left" Margin="15,35,0,0" Name="radioButtonRemoteDeploy" VerticalAlignment="Top" Width="100" Checked="radioButtonRemoteActivity_Checked" GroupName="radioRemote" />
+                                <RadioButton Content="Gather" Height="25" HorizontalAlignment="Left" Margin="15,60,0,0" Name="radioButtonRemoteGather" VerticalAlignment="Top" Width="100" Checked="radioButtonRemoteActivity_Checked" GroupName="radioRemote" />
+                                <RadioButton Content="UnDeploy" Height="25" HorizontalAlignment="Left" Margin="15,85,0,0" Name="radioButtonRemoteUnDeploy" VerticalAlignment="Top" Width="100" Checked="radioButtonRemoteActivity_Checked" GroupName="radioRemote" />
+                                <RadioButton Content="Modify" Height="25" HorizontalAlignment="Left" Margin="15,110,0,0" Name="radioButtonRemoteModify" VerticalAlignment="Top" Width="100" Checked="radioButtonRemoteActivity_Checked" GroupName="radioRemote" />
+                                <RadioButton Content="Start" Height="25" HorizontalAlignment="Left" Margin="15,135,0,0" Name="radioButtonRemoteStart" VerticalAlignment="Top" Width="100" Checked="radioButtonRemoteActivity_Checked" GroupName="radioRemote" />
+                                <RadioButton Content="Stop" Height="25" HorizontalAlignment="Left" Margin="15,160,0,0" Name="radioButtonRemoteStop" VerticalAlignment="Top" Width="100" Checked="radioButtonRemoteActivity_Checked" GroupName="radioRemote" />
+                                <Label Content="Service Start Type:" Height="25" HorizontalAlignment="Left" Margin="14,0,0,81" Name="label12" VerticalAlignment="Bottom" Width="111" />
+                                <ComboBox Height="25" HorizontalAlignment="Left" Margin="15,0,0,53" Name="comboBoxRemoteServiceStartMode" VerticalAlignment="Bottom" Width="111" ItemsSource="{Binding Path=ServiceStartModeOptions}" SelectedItem="{Binding Path=ServiceStartMode}" IsSynchronizedWithCurrentItem="True" />
+                                <Button Content="Setup / Verify" Height="25" Margin="15,246,0,0" Name="buttonRemoteSetupRemote" VerticalAlignment="Top" Click="buttonRemoteVerify_Click" HorizontalAlignment="Left" Width="111" />
+                            </Grid>
+                        </GroupBox>
+
+                        <Grid MinHeight="110" Margin="156,0,0,148" MinWidth="506" ClipToBounds="True" AllowDrop="True">
+                            <GroupBox Header="Remote Machines" ClipToBounds="True"  HorizontalAlignment="Stretch" Margin="0,0,156,0" Name="groupBoxRemoteMachines" VerticalAlignment="Stretch" AllowDrop="False">
+                                <TextBox HorizontalAlignment="Stretch" Margin="0,0,0,0" Name="textBoxRemoteInput" VerticalAlignment="Stretch" AllowDrop="True" AcceptsReturn="True" Text="{Binding Path=AppSettings.RemoteMachines}" ClipToBounds="True" LostFocus="textBoxRemoteInput_LostFocus" />
+                            </GroupBox>
+                            <CheckBox Content="Store machine states&#x0a; in between actions&#x0a; for this session." Height="53" HorizontalAlignment="Right" Margin="0,13,10,0" Name="checkBoxRemoteUseMachineCache" VerticalAlignment="Top" IsChecked="{Binding Path=AppSettings.RemoteUseMachinesCache}" />
+                            <Button Content="Clear cache states" Height="25" Margin="0,72,10,0" Name="buttonRemoteResetCache" VerticalAlignment="Top" Click="buttonRemoteResetCache_Click" HorizontalAlignment="Right" Width="127" />
+                            <Button Content="Display cache states" Height="25" HorizontalAlignment="Right" Margin="0,109,9,0" Name="buttonRemoteDisplayCacheStates" VerticalAlignment="Top" Width="127" Click="buttonDisplayCacheState_Click" />
+                        </Grid>
+                    </Grid>
+                </TabItem>
+                <TabItem Header="Options" Name="Options" GotFocus="Options_GotFocus" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" ClipToBounds="True">
+                    <Grid Margin="5,5,5,5" HorizontalAlignment="Left" VerticalAlignment="Top" ClipToBounds="True" Name="gridOptions" Width="685" Height="496">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="14" />
+                            <ColumnDefinition Width="662" />
+                            <ColumnDefinition Width="9*" />
+                        </Grid.ColumnDefinitions>
+
+                        <Grid Height="297" HorizontalAlignment="Left" Name="gridOptionsOperators" VerticalAlignment="Top" Width="151" Grid.ColumnSpan="2">
+                            <GroupBox Header="Local" Height="295" HorizontalAlignment="Left" Margin="0,0,0,0" Name="groupBoxOptionsLocal" VerticalAlignment="Top" Width="150" Grid.Column="2" />
+
+                            <Button Content="Install Service" Height="25" HorizontalAlignment="Left" Margin="30,20,0,0" Name="buttonOptionInstallService" VerticalAlignment="Top" Width="100" Click="buttonOptionInstallService_Click" />
+                            <Button Content="Uninstall Service" Height="25" HorizontalAlignment="Left" Margin="30,60,0,0" Name="buttonOptionUnInstallService" VerticalAlignment="Top" Width="100" Click="buttonOptionUnInstallService_Click" />
+                            <Button Content="Start Service" Height="25" HorizontalAlignment="Left" Margin="30,100,0,0" Name="buttonOptionStartService" VerticalAlignment="Top" Width="100" Click="buttonOptionStartService_Click" />
+                            <Button Content="Stop Service" Height="25" HorizontalAlignment="Left" Margin="30,140,0,0" Name="buttonOptionStopService" VerticalAlignment="Top" Width="100" Click="buttonOptionStopService_Click" />
+                            <Button Content="Clean" Height="25" HorizontalAlignment="Left" Margin="30,180,0,0" Name="buttonOptionClean" VerticalAlignment="Top" Width="100" Click="buttonOptionClean_Click" />
+                            <Button Content="Download Tmfs" Height="25" HorizontalAlignment="Left" Margin="30,220,0,0" Name="buttonOptionDownloadTmfs" VerticalAlignment="Top" Width="100" Click="buttonOptionDownloadTmfs_Click" />
+                            <Button Content="Check For Update" Height="25" HorizontalAlignment="Left" Margin="30,260,0,0" Name="buttonOptionCheckForUpdate" VerticalAlignment="Top" Width="100" Click="buttonCheckForUpdate_Click" />
+                        </Grid>
+
+                        <GroupBox Header="Advanced" Height="295" HorizontalAlignment="Left" Margin="143,0,0,0" Name="groupBoxOptionsAdvanced" VerticalAlignment="Top" Width="204" Grid.Column="1">
+                            <Grid Height="261" Width="194" Name="gridOptionsAdvanced">
+                                <ComboBox Height="25" HorizontalAlignment="Left" Margin="18,7,0,0" Name="comboBoxOptionsRunAs" VerticalAlignment="Top" Width="91" ItemsSource="{Binding Path=RunAsOptions}" SelectedItem="{Binding Path=RunAs}" IsSynchronizedWithCurrentItem="True" />
+                                <Label TabIndex="-1" Content="Run As" Height="25" HorizontalAlignment="Left" Margin="115,7,0,0" Name="label17" VerticalAlignment="Top" Width="59" />
+                                <TextBox Height="25" HorizontalAlignment="Left" Margin="18,45,0,0" Name="textBoxOptionsBufferLines" VerticalAlignment="Top" Width="46" Text="{Binding Path=AppSettings.BufferLines}" />
+                                <Label TabIndex="-1" Content="Output Buffer Lines&#x0a;0 is unlimited" Height="42" HorizontalAlignment="Left" Margin="72,39,0,0" Name="label13" VerticalAlignment="Top" Width="144" />
+                                <TextBox Height="25" HorizontalAlignment="Right" Margin="0,0,144,150" Name="textBoxOptionsOperationRetries" VerticalAlignment="Bottom" Width="32" Text="{Binding Path=AppSettings.Retries}" />
+                                <Label TabIndex="-1" Content="Operation Retries:&#x0a;0 is unlimited" Height="43" HorizontalAlignment="Right" Margin="0,0,32,139" Name="label11" VerticalAlignment="Bottom" Width="106" />
+                                <TextBox Height="23" HorizontalAlignment="Left" Margin="18,126,0,0" Name="textBoxOptionsBufferSize" VerticalAlignment="Top" Width="32" Text="{Binding Path=AppSettings.BufferSize}" />
+                                <Label TabIndex="-1" Content="ETW Buffer Size in KB" Height="28" HorizontalAlignment="Left" Margin="56,120,0,0" Name="labelOptionBufferSize" VerticalAlignment="Top" Width="127" />
+                                <TextBox Height="23" HorizontalAlignment="Left" Margin="18,159,0,0" Name="textBoxOptionsBufferMin" VerticalAlignment="Top" Width="32" Text="{Binding Path=AppSettings.BufferMin}" />
+                                <Label TabIndex="-1" Content="ETW Min Buffers" Height="28" HorizontalAlignment="Left" Margin="56,154,0,0" Name="labelOptionBufferMin" VerticalAlignment="Top" Width="127" />
+                                <TextBox Height="23" HorizontalAlignment="Left" Margin="18,193,0,0" Name="textBoxOptionsBufferMax" VerticalAlignment="Top" Width="32" Text="{Binding Path=AppSettings.BufferMax}" />
+                                <Label TabIndex="-1" Content="ETW Max Buffers" Height="28" HorizontalAlignment="Left" Margin="56,188,0,0" Name="labelOptionBufferMax" VerticalAlignment="Top" Width="127" />
+                                <TextBox Height="23" HorizontalAlignment="Left" Margin="18,226,0,0" Name="textBoxOptionsLogLevel" VerticalAlignment="Top" Width="32" Text="{Binding Path=AppSettings.LogLevel}" />
+                                <Label TabIndex="-1" Content="ETW Log Level" Height="28" HorizontalAlignment="Left" Margin="56,222,0,0" Name="labelOptionsLogLevel" VerticalAlignment="Top" Width="127" />
+                            </Grid>
+                        </GroupBox>
+
+                        <Grid Height="295" HorizontalAlignment="Left" Margin="353,0,0,0" Name="gridOptionsChild" VerticalAlignment="Top" Width="309" Grid.Column="1">
+                            <!--<CheckBox Content="Use Credentials" Height="16" HorizontalAlignment="Left" Margin="19,23,0,0" Name="checkBoxOptionsUseCredentials" VerticalAlignment="Top" Unchecked="checkBoxOptionsUseCredentials_Unchecked" IsChecked="{Binding Path=AppSettings.UseCredentials}" Checked="checkBoxOptionsUseCredentials_Click" />-->
+                            <CheckBox Content="Use Credentials" Height="16" HorizontalAlignment="Left" Margin="19,23,0,0" Name="checkBoxOptionsUseCredentials" VerticalAlignment="Top" IsChecked="{Binding Path=AppSettings.UseCredentials}" Click="checkBoxOptionsUseCredentials_Click" />
+                            <CheckBox Content="Use Service Credentials" Height="16" HorizontalAlignment="Left" Margin="159,23,0,0" Name="checkBoxOptionsUseServiceCredentials" VerticalAlignment="Top" IsChecked="{Binding Path=AppSettings.UseServiceCredentials}" Checked="checkBoxOptionsUseCredentials_Click" IsEnabled="False" />
+                            <CheckBox Content="Auto Scroll Output" Height="16" HorizontalAlignment="Left" Margin="19,55,0,0" Name="checkBoxOptionsAutoScroll" VerticalAlignment="Top" IsChecked="{Binding Path=AppSettings.AutoScroll}" />
+                            <CheckBox Content="Allow Single Instance" Height="16" HorizontalAlignment="Left" Margin="159,55,0,0" Name="checkBoxOptionsAllowSingleInstance" VerticalAlignment="Top" IsChecked="{Binding Path=AppSettings.AllowSingleInstance}" />
+                            <Label TabIndex="-1" Content="Configuration File:" Height="28" HorizontalAlignment="Left" Margin="20,87,0,0" Name="labelOptionConfigFile" VerticalAlignment="Top" />
+                            <TextBox Height="25" HorizontalAlignment="Left" Margin="135,89,0,0" Name="textBoxOptionsConfigFile" VerticalAlignment="Top" Width="165"  Text="{Binding Path=AppSettings.ConfigFile}" />
+                            <Button Content="Insert Marker" Height="25" HorizontalAlignment="Left" Margin="20,136,0,0" Name="buttonOptionsInsertMarker" VerticalAlignment="Top" Width="100" Click="buttonOptionsInsertMarker_Click" />
+                            <TextBox Height="25" HorizontalAlignment="Left" Margin="135,136,0,0" Name="textBoxOptionsInsertMarkerText" VerticalAlignment="Top" Width="165" />
+                            <CheckBox Content="Start Trace on Event" Height="16" HorizontalAlignment="Left" Margin="19,180,0,0" Name="checkBoxOptionsStartTraceOnEvent" VerticalAlignment="Top" IsChecked="{Binding Path=AppSettings.StartEventEnabled}" Click="checkBoxOptionsStartTraceOnEvent_Checked" />
+                            <CheckBox Content="Start Trace Immediately" Height="16" HorizontalAlignment="Left" IsChecked="{Binding Path=AppSettings.StartEventEnabledImmediately}" Margin="159,180,0,0" Name="checkBoxOptionsStartTraceImmediately"  VerticalAlignment="Top" />
+                            <ComboBox Height="23" HorizontalAlignment="Left" Margin="61,204,0,0" Name="comboBoxOptionsStartTraceEventSource" VerticalAlignment="Top" Width="120" ItemsSource="{Binding Path=EventLogSourceOptions}" SelectedItem="{Binding Path=AppSettings.StartEventSource}" IsSynchronizedWithCurrentItem="True" />
+                            <Label TabIndex="-1" Content="EventID:" Height="28" HorizontalAlignment="Left" Margin="192,205,0,0" Name="labelOptionsStartEventID" VerticalAlignment="Top" />
+                            <TextBox Height="25" HorizontalAlignment="Right" Margin="0,207,15,0" Name="textBoxOptionsStartEventID" Text="{Binding Path=AppSettings.StartEventID}" VerticalAlignment="Top" Width="50" />
+                            <CheckBox Content="Stop Trace on Event" Height="16" HorizontalAlignment="Left" Margin="18,233,0,0" Name="checkBoxOptionsStopTraceOnEvent" VerticalAlignment="Top" IsChecked="{Binding Path=AppSettings.StopEventEnabled}" Click="checkBoxOptionsStopTraceOnEvent_Checked" />
+                            <CheckBox Content="Stop Trace Permanently" Height="16" HorizontalAlignment="Left" IsChecked="{Binding Path=AppSettings.StopEventDisabledPermanently}" Margin="159,233,0,0" Name="checkBoxOptionsStopTracePermanently"  VerticalAlignment="Top" />
+                            <ComboBox Height="23" HorizontalAlignment="Left" Margin="61,255,0,0" Name="comboBoxOptionsStopTraceEventSource" VerticalAlignment="Top" Width="120" ItemsSource="{Binding Path=EventLogSourceOptions}" SelectedItem="{Binding Path=AppSettings.StopEventSource}" IsSynchronizedWithCurrentItem="True" />
+                            <Label TabIndex="-1" Content="EventID:" Height="28" HorizontalAlignment="Left" Margin="192,254,0,0" Name="labelOptionsStopEventID" VerticalAlignment="Top" />
+                            <TextBox Height="25" HorizontalAlignment="Right" Margin="0,256,15,0" Name="textBoxOptionsStopEventID" Text="{Binding Path=AppSettings.StopEventID}" VerticalAlignment="Top" Width="50" />
+                        </Grid>
+                        <GroupBox Header="Tech Support" Height="100" HorizontalAlignment="Left" Margin="0,327,0,-20" Name="groupBoxOptionTechSupp" VerticalAlignment="Top" Width="200" Grid.ColumnSpan="2">
+                            <Grid>
+                                <Label Content="EnableFlags:" Height="28" HorizontalAlignment="Left" Margin="10,5,0,0" Name="label28" VerticalAlignment="Top" />
+                                <TextBox Height="23" HorizontalAlignment="Left" Margin="90,5,0,0" Name="textBoxOptionsEnableFlags" VerticalAlignment="Top" Width="91" Text="{Binding Path=AppSettings.EnableFlags}" />
+                            </Grid>
+                        </GroupBox>
+                        <GroupBox Header="File Type Association" Height="100" HorizontalAlignment="Left" Margin="200,327,0,-20" Name="groupBoxOptionFTA" VerticalAlignment="Top" Width="130" Grid.ColumnSpan="2">
+                            <Grid>
+                                <Button Content="Register FTA" Height="25" HorizontalAlignment="Left" Margin="10,5,0,0" Name="buttonOptionRegisterFTA" VerticalAlignment="Top" Width="100" Click="buttonOptionRegisterFTA_Click" />
+                                <Button Content="Unregister FTA" Height="25" HorizontalAlignment="Left" Margin="10,45,0,0" Name="buttonOptionUnregisterFTA" VerticalAlignment="Top" Width="100" Click="buttonOptionUnregisterFTA_Click" />
+                            </Grid>
+                        </GroupBox>
+                        <GroupBox Header="Config File" Height="100" HorizontalAlignment="Left" Margin="330,327,0,-20" Name="groupBoxOptionConfig" VerticalAlignment="Top" Width="130" Grid.ColumnSpan="2">
+                            <Grid>
+                                <Button Content="Reset Config" Height="25" HorizontalAlignment="Left" Margin="10,5,0,0" Name="buttonOptionResetConfig" VerticalAlignment="Top" Width="100" Click="buttonOptionResetConfig_Click" />
+                                <Button Content="FTA Config" Height="25" HorizontalAlignment="Left" Margin="10,45,0,0" Name="buttonOptionFTAConfig" VerticalAlignment="Top" Width="100" Click="buttonOptionFTAConfig_Click" />
+                            </Grid>
+                        </GroupBox>
+                    </Grid>
+                </TabItem>
+
+                <TabItem Header="Output" Name="Output" GotFocus="Output_GotFocus" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" ClipToBounds="True">
+                    <Grid Margin="5,5,5,5" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" ClipToBounds="True">
+                        <ListBox VirtualizingStackPanel.IsVirtualizing="True" VirtualizingStackPanel.VirtualizationMode="Recycling" Margin="0,0,0,40" Name="listBoxConsoleOutput" Grid.ColumnSpan="2" Background="Black" HorizontalAlignment="Stretch" ScrollViewer.HorizontalScrollBarVisibility="Disabled" VerticalAlignment="Stretch" SelectionMode="Extended">
+                            <ListBox.CommandBindings>
+                                <CommandBinding Command="ApplicationCommands.Copy" CanExecute="CopyCmdCanExecute" Executed="CopyCmdExecuted" />
+                            </ListBox.CommandBindings>
+                            <ListBox.ContextMenu>
+                                <ContextMenu HasDropShadow="True">
+                                    <MenuItem Header="Copy" Command="ApplicationCommands.Copy" CommandTarget="{Binding ElementName=listBoxConsoleOutput}" />
+                                </ContextMenu>
+                            </ListBox.ContextMenu>
+                        </ListBox>
+                        <Label TabIndex="-1" Content="Filter:" Height="25" HorizontalAlignment="Left" Margin="1,0,0,5" Name="label18" VerticalAlignment="Bottom" Width="45" />
+                        <TextBox Height="25" Margin="50,0,305,5" Name="textBoxOutputFilter" VerticalAlignment="Bottom" KeyUp="textBoxOutputFilter_TextChanged" Text="{Binding Path=AppSettings.DisplayFilter}" />
+                        <CheckBox Content="Invert" Height="16" HorizontalAlignment="Right" Margin="0,0,244,14" Name="checkBoxOutputInvertFilter" VerticalAlignment="Bottom" Click="checkBoxOutputInvertFilter_Checked" />
+                        <Button Content="Clear" Height="25" HorizontalAlignment="Right" Margin="439,0,130,7" Name="buttonOutputClear" VerticalAlignment="Bottom" Width="99" Click="buttonOutputClear_Click" />
+                        <Button Content="Show Stats" Height="25" HorizontalAlignment="Right" Margin="559,0,15,7" Name="buttonOutputShowStats" VerticalAlignment="Bottom" Width="99" Click="buttonOutputShowStats_Click" />
+                    </Grid>
+                </TabItem>
+            </TabControl>
+        </Grid>
+
+        <Grid HorizontalAlignment="Stretch" Name="grid8" VerticalAlignment="Bottom" ClipToBounds="True">
+            <RichTextBox IsDocumentEnabled="True" MinHeight="100" MaxHeight="100" HorizontalAlignment="Stretch" Margin="10,0,10,45" IsReadOnly="True" Name="Status" VerticalAlignment="Bottom"  VerticalScrollBarVisibility="Auto" />
+        </Grid>
+
+        <Grid Height="45" HorizontalAlignment="Stretch" Margin="5,5,5,5" Name="grid4" VerticalAlignment="Bottom">
+            <Button Content="Start" Height="25" HorizontalAlignment="Left" Margin="4,6,0,5" Name="buttonStart" VerticalAlignment="Bottom" Width="99" Click="Start_Click" />
+            <Button Content="Stop" Height="25" HorizontalAlignment="Left" Margin="109,6,0,5" Name="buttonStop" VerticalAlignment="Bottom" Width="99" Click="Stop_Click" IsEnabled="False" />
+            <Button Content="Load" Height="25" HorizontalAlignment="Left" Margin="214,6,0,5" Name="buttonLoad" VerticalAlignment="Bottom" Width="99" Click="Load_Click" />
+            <Button Content="Save" Height="25" HorizontalAlignment="Left" Margin="319,6,0,5" Name="buttonSave" VerticalAlignment="Bottom" Width="99" Click="Save_Click" />
+            <Button Content="Save As" Height="25" HorizontalAlignment="Left" Margin="424,6,0,5" Name="buttonSaveAs" VerticalAlignment="Bottom" Width="99" Click="SaveAs_Click" />
+            <Button Content="Close Remote Config" Height="25" HorizontalAlignment="Left" Margin="528,0,0,5" Name="buttonCloseRemoteConfig" VerticalAlignment="Bottom" Width="130" IsEnabled="False" Visibility="Hidden" Click="buttonCloseRemoteConfig_Click" />
+            <Button Content="Edit Remote Config" Height="25" HorizontalAlignment="Left" Margin="528,0,0,5" Name="buttonEditRemoteConfig" VerticalAlignment="Bottom" Width="130" IsEnabled="False" Visibility="Hidden" Click="buttonEditRemoteConfig_Click" />
+        </Grid>
+    </Grid>
+</Window>

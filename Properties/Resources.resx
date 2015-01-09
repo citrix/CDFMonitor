@@ -1,0 +1,1599 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="ActionGotFocus" xml:space="preserve">
+    <value>Use this tab to specify what actions should be taken when either utility is started, stopped, or a match is found.</value>
+  </data>
+  <data name="ActivityGotFocus" xml:space="preserve">
+    <value>Use this tab to select the type of activity to be performed. </value>
+  </data>
+  <data name="CaptureTrace" xml:space="preserve">
+    <value>Use capture trace to capture a real-time trace and when it is not necessary to trigger a particular action off of a single trace message. This option provides the best performance.</value>
+  </data>
+  <data name="CaptureTraceMessage" xml:space="preserve">
+    <value>Use capture trace message to capture a real-time trace when it is necessary to trigger a particular action off of a single trace message. This option may produce additional cpu utilization.</value>
+  </data>
+  <data name="CDFMonitorTMF" xml:space="preserve">
+    <value>8263A91E-66CC-4BE4-919B-E962E5F40CC7 _#cdfm#_
+#typev  cdfmonitor 0 "%0%10!s!:%11!d!:%12!d!:%13!s!"
+{
+Module, ItemWString -- 10
+Class, ItemLong -- 11
+Level, ItemLong -- 12
+MSG, ItemWString -- 13
+}</value>
+  </data>
+  <data name="FriendlyName" xml:space="preserve">
+    <value>Citrix CDFMonitor</value>
+  </data>
+  <data name="LoggingGotFocus" xml:space="preserve">
+    <value>Use this tab to specify logging options for both .csv and .etl file outputs. This tab also configures options for Console and 'Output' tab output. When using 'Log File Server' this utility does NOT delete any zip files uploaded to server so be sure to plan accordingly.</value>
+  </data>
+  <data name="MagicTMF" xml:space="preserve">
+    <value>1c7af7a9-d188-4604-a430-9c378087ca5d _#dotNet#_
+#typev  unknown1 1 "%0%10!s!:%11!d!:%12!d!:%13!s!"
+
+
+{
+Module, ItemWString -- 10
+Class, ItemLong -- 11
+Level, ItemLong -- 12
+MSG, ItemWString -- 13
+}
+#typev  unknown2 2 "%0%10!s!:%11!d!:%12!d!:%13!s!"
+
+
+{
+Module, ItemWString -- 10
+Class, ItemLong -- 11
+Level, ItemLong -- 12
+MSG, ItemWString -- 13
+}
+#typev  unknown3 3 "%0%10!s!:%11!d!:%12!d!:%13!s!: Start 0x%14!0I64u!: Stop 0x%15!I64x!: Duration %16!s! seconds"
+
+
+{
+Module, ItemWString -- 10
+Class, ItemLong -- 11
+Level, ItemLong -- 12
+TimerName, ItemWString -- 13
+StartTime, ItemLongLong -- 14
+StopTime, ItemLongLong -- 15
+Duration, ItemDouble -- 16
+}</value>
+  </data>
+  <data name="MatchGotFocus" xml:space="preserve">
+    <value>Use this tab to supply a Regex expression to be used when tracing or parsing for a particular message. This tab can be used to validate the regular expression and test the regular expression against sample text.</value>
+  </data>
+  <data name="MatchRegexPattern" xml:space="preserve">
+    <value>Input the regular expression to be used when tracing or parsing for a particular message.</value>
+  </data>
+  <data name="MatchRegexPatternInvalid" xml:space="preserve">
+    <value>The supplied regular expression is invalid.</value>
+  </data>
+  <data name="MatchRegexPatternValid" xml:space="preserve">
+    <value>The supplied regular expression is valid. Use sample text to verify pattern will capture the desired match.</value>
+  </data>
+  <data name="MatchRegexTest" xml:space="preserve">
+    <value>Input sample text to test the regular expression pattern supplied in RegexPattern.</value>
+  </data>
+  <data name="MatchRegexTestInvalid" xml:space="preserve">
+    <value>Either the supplied regular expression is invalid or the the sample text is invalid.</value>
+  </data>
+  <data name="MatchRegexTestNoMatch" xml:space="preserve">
+    <value>There were no matches using the current RegexPattern against the sample text provided. Please verify RegexPattern and sample text.</value>
+  </data>
+  <data name="MatchRegexTestText" xml:space="preserve">
+    <value>Input sample text to match here ...</value>
+  </data>
+  <data name="ModulesGotFocus" xml:space="preserve">
+    <value>Use this tab to select the traces modules needed for realtime tracing. By default, modules will be enumerated from local machine. If deploying remotely, Select the Remote button and populate with machine name or IP of machine that will be traced. Modules will be enumerated from the remote machine. If Enable modules by filter is checked, make sure module source is always available.</value>
+  </data>
+  <data name="Network" xml:space="preserve">
+    <value />
+  </data>
+  <data name="NetworkGotFocus" xml:space="preserve">
+    <value>Use this tab to enable receiving traces and monitoring data over network from CDFMonitor clients using UDP protocol. UDP protocol messaging is not gauranteed and all traces are sent in CLEAR TEXT. Supply Server name, server udp port, and client udp port. Udp ping time is in seconds is how often the udp client will send a ping to server. Minimum time is 60 seconds.</value>
+  </data>
+  <data name="NotifyGotFocus" xml:space="preserve">
+    <value>Use this tab to specify smtp parameters for notification that a match has occured. Password for Notify if configured will be stored as clear text in config file. To prompt for password, supply 'User' and leave 'Password' blank.</value>
+  </data>
+  <data name="OptionsGotFocus" xml:space="preserve">
+    <value>Use this tab to set miscellaneous options and run certain administrative functions. When selecting 'Use Credentials', the credentials will be permanently stored in windows 'Credential Manager' under name 'CDFMonitor' if 'Remember my pasword' is checked. Otherwise, the credentials are only stored in process memory while process is running. Unchecking 'Use Credentials' removes the 'CDFMonitor' credentials from windows 'Credential Manager' if 'Remember my password' was checked.</value>
+  </data>
+  <data name="OutputGotFocus" xml:space="preserve">
+    <value>Use this tab to view all output from utility. This output can be controlled by options specified in the 'Logging' tab. The output is the same as output to console when runas is set to console and to the output log file. the 'Filter' line is a filter only for the display in the Output console. It filters based on regex expressions and displays all matched traces in the Output console buffer. Selecting 'Invert' will filter any matched traces from being viewed.</value>
+  </data>
+  <data name="ParseTrace" xml:space="preserve">
+    <value>Use the parse trace to parse an existing .etl trace and when it is not necessary to trigger a particular action off of a single trace message. Wildcards for *.zip and *.etl can be used.</value>
+  </data>
+  <data name="ParseTraceMessage" xml:space="preserve">
+    <value>Use the parse trace to parse an existing .etl trace. Wildcards for example *.zip and *.etl can be used to parse all files in specified directory and subdirectories. Matches and Actions can also be configured when it is necessary to trigger a particular action off of a matched trace message.</value>
+  </data>
+  <data name="RemoteActivities" xml:space="preserve">
+    <value>Use Remote Management to manage remote instances of CDFMonitor. Some management examples are: deploy, undeploy, and gathering of trace files from remote instances.</value>
+  </data>
+  <data name="RemoteGotFocus" xml:space="preserve">
+    <value>Use this tab to manage CDFMonitor remotely. Instances can be deployed, gathered, and undeployed.</value>
+  </data>
+  <data name="ServiceDescription" xml:space="preserve">
+    <value>Provides Citrix CDF Trace monitoring and management.</value>
+  </data>
+  <data name="ServiceName" xml:space="preserve">
+    <value>CDFMonitor</value>
+  </data>
+  <data name="SessionName" xml:space="preserve">
+    <value>CDFMonitor</value>
+  </data>
+  <data name="TMFServerGuidList" xml:space="preserve">
+    <value>guids.txt</value>
+  </data>
+  <data name="TraceFileGotFocus" xml:space="preserve">
+    <value>Provide path to existing .etl file to be parsed.</value>
+  </data>
+  <data name="UploadGotFocus" xml:space="preserve">
+    <value>Use this tab to specify upload paremeters for uploading specified files in 'Url Files' when a match occurs. Password for Upload if configured will be stored as clear text in config file. To prompt for password, supply 'User' and leave 'Password' blank.</value>
+  </data>
+  <data name="SystemTMF" xml:space="preserve">
+    <value>//******************************************
+// System Trace Definitions
+// Version 0006.1      22th Sep 2004
+//******************************************
+
+// The #typev statement may be used to convert
+// messages into user readable forms.
+// Syntax:
+//
+// Guid                 EventName
+// #version             value
+// #level               value                   // Not Supported
+// #typeV name1 value1  FormatString
+// {
+//   MofFields
+// }
+// #typeV name2 value2  FormatString
+// {
+//   MofFields
+// }
+//
+// With #typev all parameters are processed as strings and the default string
+// processing of FormTMessage is used
+// With #typev wherever possible parameters are processed as their native format
+// and the %x!x! style of FormatMessage should be used.
+//
+// Note Parameter %1 through %9 are predefined
+// Parameter            is                                      #typev
+// %1                   GUID Friendly Name                      string
+// %2                   GUID SubType Name                       string
+// %3                   Thread ID                               ULONG_PTR
+// %4                   System Time                             String
+// %5                   Kernel Time     or User Time            String
+// %6                   User Time       or NULL                 String
+// %7                   Sequence Number                         LONG
+// %8                   Unused                                  String
+// %9                   CPU Number                              LONG
+// %10 and above are the user parameters
+// %255                 Is reserved
+//
+// Note these parameters are always present, but may not be valid 
+// depending on the source.
+//
+// User defined messages always start at message number 10
+// Messages 0 through 9 are reserved for system use.
+// Message number 255 is reserved.
+//
+// Available formats for user arguments are -
+//
+//Name          Description                             #typev Format
+//ItemChar                                              CHAR
+//ItemUChar                                             UCHAR
+//ItemCharShort                                         USHORT
+//ItemCharSign                                          SHORT
+//ItemShort     Signed Short                            SHORT
+//ItemUShort    Unsigned Short                          USHORT
+//ItemLong      Signed Long, decoded as decimal         LONG
+//ItemULong     Unsigned Long, decoded as decimal       ULONG
+//ItemULongX    Unsigned Long, seen as hexadecimal      ULONG
+//ItemLongLong  Signed 64 Bit value                     LONGLONG
+//ItemULongLong Unsigned 64 Bit value                   ULONGLONG
+//ItemRString   Reduced Ascii String                    String
+//      (\t, \n, \r, \,, converted to space, trailing sp removed)
+//ItemWString   Unicode String, null terminated         String
+//ItemPString   Counted Ascii String                    String
+//ItemPWString  Counted Unicode String                  String
+//ItemMLString  Multi-Line Ascii String                 String
+//ItemKSid      Security identifier                     String
+//ItemChar4                                             CHAR4
+//ItemIPAddr    IP Address                              String          (If needed raw, use ItemUlong)
+//              (string of form xxx.xxx.xxx.xxx)
+//ItemPort                                              String          (If needed raw use ItemUshort)
+//ItemNWString      Non-null terminated Wide Char String        String
+//ItemListByte (element1,element2,....)                 String
+//                      byte index into a list of strings
+//ItemListShort(element1,element2,....)                 String
+//                      short index into a list of strings
+//ItemListLong (element1,element2,....)                 String
+//                      Long index into a list of strings
+//ItemGUID      Normal GUID format                      String
+//ItemNTerror   Translates a ULONG error code to the    String
+//              NT Error Text
+//ItemNTSTATUS  Converts NTSTATUS to symbolic name      String
+//ItemWINERROR Converts WINERROR to symbolic name       String
+//ItemNETEVENT Converts NETEVENT to symbolic name       String
+//ItemMerror module.ext                                 String
+//              Translates a ULONG error code using the 
+//              module specified.
+//ItemTimeStamp Treats a LONGLONG as a timestamp        String
+//ItemUnknown                                           String
+
+
+
+68fdd900-4a3e-11d1-84f4-0000f80464e3 EventTrace
+#typev LogFileHeader    0      "%0EventTrace Header"
+{
+    BufferSize,     ItemULong
+    Version,        ItemULong
+    BuildNumber,    ItemULong
+    NumProc,        ItemULong
+    EndTime,        ItemULongLong
+    TimerResolution,ItemULong
+    MaxFileSize,    ItemULong
+    LogFileMode,    ItemULongX
+    BuffersWritten, ItemULong
+    StartBuffers,   ItemULong
+    PointerSize,    ItemULong
+    EventsLost,     ItemULong
+    CPUSpeed,       ItemULong
+    LoggerName,     ItemPtr
+    LogFileName,    ItemPtr
+    TimeZone,       ItemCharHidden[176]
+    BootTime,       ItemULongLong
+    PerfFrequency,  ItemULongLong
+    StartTime,      ItemULongLong
+    ReservedFlags,  ItemULongX
+    BuffersLost,    ItemULong
+}
+#typev Extension     5 "extension"
+{
+    GroupMaks1,      ItemULongX
+    GroupMaks2,      ItemULongX
+    GroupMaks3,      ItemULongX
+    GroupMaks4,      ItemULongX
+    GroupMaks5,      ItemULongX
+    GroupMaks6,      ItemULongX
+    GroupMaks7,      ItemULongX
+    GroupMaks8,      ItemULongX
+}
+#typev RDComplete    8 "rdcomplete"
+{
+}
+3d6fa8d0-fe05-11d0-9dda-00c04fd7ba7c Process
+#version        0
+#typev Start   1  "%0Started Process %10!04X!.%11!04X! "%13!s!" :: %12!s!"
+#typev End     2  "%0Ended   Process %10!04X!.%11!04X! "%13!s!" :: %12!s!"        
+#typev DCStart 3  "%0Data Collection Started of %10!04X!.%11!04X! "%13!s!"  :: %12!s!"
+#typev DCEnd   4  "%0Data Colection Ended for %10!04X!.%11!04X! "%13!s!" :: %12!s!"
+{
+    ProcessId, ItemPtr
+    ParentId, ItemPtr
+    UserSID, ItemKSid
+    ImageFileName, ItemString
+}
+#version       1
+#typev Start   1  "%0Started Process %11!04X!.%12!04X! "%16!s!" :: %15!s! (Session=%13!d!) "
+#typev End     2  "%0Ended   Process %11!04X!.%12!04X! "%16!s!" :: %15!s! (Session=%13!d!) Exit Status %14!X!"    
+#typev DCStart 3  "%0Data Collection Started of %11!04X!.%12!04X! "%16!s!"  :: %15!s! (Session=%13!d!)"
+#typev DCEnd   4  "%0Data Colection Ended for %11!04X!.%12!04X! "%16!s!" :: %15!s! (Session=%13!d!)"
+{
+    PageDirectoryBase, ItemPtr
+    Process Id, ItemULong
+    Parent Id, ItemULong
+    Session Id, ItemULong
+    Exit Status, ItemUlong
+    User SID, ItemKSid
+    Image FileName, ItemString
+}
+#version       2
+#typev Start   1  "%0Started Process %11!04X!.%12!04X! "%16!s!" :: %15!s! (Session=%13!d!) "
+#typev End     2  "%0Ended   Process %11!04X!.%12!04X! "%16!s!" :: %15!s! (Session=%13!d!) Exit Status %14!X!"    
+#typev DCStart 3  "%0Data Collection Started of %11!04X!.%12!04X! "%16!s!"  :: %15!s! (Session=%13!d!)"
+#typev DCEnd   4  "%0Data Colection Ended for %11!04X!.%12!04X! "%16!s!" :: %15!s! (Session=%13!d!)"
+{
+    UniqueProcessKey, ItemPtr
+    Process Id, ItemULong
+    Parent Id, ItemULong
+    Session Id, ItemULong
+    Exit Status, ItemUlong
+    User SID, ItemKSid
+    Image FileName, ItemString
+}
+#version       3
+#typev Start   1  "%0Started Process %11!04X!.%12!04X! %17!s! :: %16!s! (Session=%13!d!) "
+#typev End     2  "%0Ended   Process %11!04X!.%12!04X! %17!s! :: %16!s! (Session=%13!d!) Exit Status %14!X!"    
+#typev DCStart 3  "%0Data Collection Started of %11!04X!.%12!04X! %17!s!  :: %16!s! (Session=%13!d!)"
+#typev DCEnd   4  "%0Data Colection Ended for %11!04X!.%12!04X! %17!s! :: %16!s! (Session=%13!d!)"
+{
+    UniqueProcessKey, ItemPtr
+    Process Id, ItemULong
+    Parent Id, ItemULong
+    Session Id, ItemULong
+    Exit Status, ItemUlong
+    PageTable, ItemPtr
+    User SID, ItemKSid
+    Image FileName, ItemString
+}
+
+#version       3
+#typev Start   1  "%0Started Process %11!04X!.%12!04X! "%17!s!" :: %16!s! (Session=%13!d!) "
+#typev End     2  "%0Ended   Process %11!04X!.%12!04X! "%17!s!" :: %16!s! (Session=%13!d!) Exit Status %14!X!"    
+#typev DCStart 3  "%0Data Collection Started of %11!04X!.%12!04X! "%17!s!"  :: %16!s! (Session=%13!d!)"
+#typev DCEnd   4  "%0Data Colection Ended for %11!04X!.%12!04X! "%17!s!" :: %16!s! (Session=%13!d!)"
+{
+    UniqueProcessKey, ItemPtr
+    Process Id, ItemULong
+    Parent Id, ItemULong
+    Session Id, ItemULong
+    Exit Status, ItemUlong
+    PageTable, ItemPtr
+    User SID, ItemKSid
+    Image FileName, ItemString
+}
+
+
+3d6fa8d1-fe05-11d0-9dda-00c04fd7ba7c Thread
+#version 0
+#typev Start    1 "%0Started  Thread %10!04X!.%11!04X!"
+#typev End      2 "%0Ended    Thread %10!04X!.%11!04X!"
+#typev DCStart  3 "%0Data Collection Started for %10!04X!.%11!04X!"
+#typev DCEnd    4 "%0Data Collection Ended for %10!04X!.%11!04X!"
+{
+    Process Id, ItemULong
+    Thread Id, ItemULong
+}
+#version 1
+#typev Start    1 "%0Started  Thread %10!04X!.%11!04X!"
+#typev DCStart  3 "%0Data Collection Started for %10!04X!.%11!04X!"
+{
+    Process Id, ItemULong
+    Thread Id, ItemULong
+    StackBase, ItemPtr
+    StackLimit, ItemPtr
+    UserStackBase, ItemPtr
+    UserStackLimit, ItemPtr
+    StartAddr, ItemPtr
+    Win32StartAddr, ItemPtr
+    WaitMode, ItemChar
+}
+#version 1
+#typev End      2 "%0Ended    Thread %10!04X!.%11!04X!"
+#typev DCEnd    4 "%0Data Collection Ended for %10!04X!.%11!04X!"
+{
+    Process Id, ItemULong
+    Thread Id, ItemULong
+}
+#version 1
+#typev CSwitch    36    "%0 Context Switch from %11!d!. to %10!d!."
+{
+    NewThreadId, ItemULongX
+    OldThreadId, ItemULongX
+    NewThreadPriority, ItemCharShort
+    OldThreadPriority, ItemCharShort
+    NewThreadQuantum, ItemCharShort
+    OldThreadQuantum, ItemCharShort
+    OldThreadWaitReason, ItemCharShort
+    OldThreadWaitMode, ItemCharShort
+    OldThreadState, ItemCharShort
+    OldThreadWaitIdealProcessor, ItemCharShort
+    NewThreadWaitTime, ItemULongX
+}
+#version 1
+#typev CompCS    37    "%0 Compressed CS Event."
+{
+}
+#version 1
+#typev WorkerThread 57    "%0 WorkerThread ThreadId = %10!d!  :: ThreadRoutine  %12!d!"
+{
+    ThreadId , ItemULongX
+    StartTime, ItemULongLong
+    ThreadRoutine, ItemULongX
+}
+#version       2
+#typev Start   1  "%0Started Thread %10!04X!.%11!04X! "
+#typev End     2  "%0Ended   Thread %10!04X!.%11!04X! " 
+#typev DCStart 3  "%0Data Collection Started of %10!04X!.%11!04X! "
+#typev DCEnd   4  "%0Data Colection Ended for %10!04X!.%11!04X! "
+{
+    ProcessId, ItemULong
+    ThreadId, ItemULong
+    StackBase, ItemPtr
+    StackLimit, ItemPtr
+    UserStackBase, ItemPtr
+    UserStackLimit, ItemPtr
+    StartAddr, ItemPtr
+    Win32StartAddr, ItemPtr
+    TebBase, ItemPtr
+    WaitMode, ItemChar    
+}
+    
+#version 2
+#typev CSwitch    36    "%0 Context Switch from %11!d!. to %10!d!.
+{
+    NewThreadId, ItemULongX
+    OldThreadId, ItemULongX
+    NewThreadPriority, ItemCharShort
+    OldThreadPriority, ItemCharShort
+    PreviousCState, ItemCharShort
+    SpareByte, ItemCharShort
+    OldThreadWaitReason, ItemCharShort
+    OldThreadWaitMode, ItemCharShort
+    OldThreadState, ItemCharShort
+    OldThreadWaitIdealProcessor, ItemCharShort
+    NewThreadWaitTime, ItemULongX
+}
+#version 2
+#typev CompCS    37    "%0 Compressed CS Event."
+{
+}
+#version 2
+#typev WorkerThread 57    "%0 WorkerThread ThreadId = %10!d!  :: ThreadRoutine  %12!d!"
+{
+    ThreadId , ItemULongX
+    StartTime, ItemULongLong
+    ThreadRoutine, ItemULongX
+}
+#version 2
+#typev ReserveCreate 48    "%0 ReserveCreate Reserve =%10!p! ::Period %11!d! :: ObjectFlags = %13!d!  :: Processor  %14!d!"
+{
+    Reserve , ItemPtr
+    Period, ItemULong
+    Budget, ItemULong
+    ObjectFlags, ItemULong
+    Processor,ItemChar
+}
+#version 2
+#typev ReserveDelete 49    "%0 ReserveDelete Reserve =%10!p!"
+{
+    Reserve , ItemPtr
+}
+#version 2
+#typev ReserveJoinThread 52    "%0 ReserveJoinThread Reserve =%10!p! :: ThreadId = %11!d!"
+{
+    Reserve , ItemPtr
+    ThreadId, ItemULong
+}
+#version 2
+#typev ReserveDisjoinThread 53    "%0 ReserveDisjoinThread Reserve =%10!p! :: ThreadId = %11!d!"
+{
+    Reserve , ItemPtr
+    ThreadId, ItemULong
+}
+#version 2
+#typev ReserveState 54    "%0 ReserveState Reserve =%10!p! :: DispatchState = %11!d!"
+{
+    Reserve , ItemPtr
+    DispatchState, ItemChar
+    Replenished,ItemChar // was ItemBool
+}
+#version 2
+#typev ReserveBandwidth 55    "%0 ReserveBandwidth Reserve =%10!p! :: Period = %11!d!"
+{
+    Reserve , ItemPtr
+    Period, ItemULong
+    Budget, ItemULong
+}
+#version 2
+#typev ReserveLateCount 56    "%0 ReserveLateCount Reserve =%10!p! :: LateCountIncrement = %11!d!"
+{
+    Reserve , ItemPtr
+    LateCountIncrement, ItemULong
+}
+
+
+3d6fa8d3-fe05-11d0-9dda-00c04fd7ba7c PageFault
+#typev TransitionFault 10       "%0Pagefault Transition VA=0x%10!08X!, PC=0x%11!08X!"
+#typev DemandZeroFault 11       "%0Pagefault DemandZero VA=0x%10!08X!, PC=0x%11!08X!"
+#typev CopyOnWrite     12       "%0Pagefault CopyOnWrite VA=0x%10!08X!, PC=0x%11!08X!"
+#typev GlobalPageFault 13       "%0Pagefault GuardPageFault VA=0x%10!08X!, PC=0x%11!08X!"
+#typev Hard            14       "%0Pagefault Hard VA=0x%10!08X!, PC=0x%11!08X!"
+{
+        Virtual Address,ItemULongX
+        Program Counter,ItemUlongX
+}
+#typev HardPageFault    32      "PageFault  Hard VA=0x%12!X! TID=0x%14!08X! ReadOffset=0x%11!I64X! Fileobject=0x%13!x! ByteCount=0x%15!08X!"
+{
+        InitialTime,ItemULongLong       //10
+        ReadOffset,ItemULongLong        //11
+        VirtualAddress,ItemULong          //12
+        FileObject,ItemULong              //13
+        ThreadId,ItemUlong              //14
+        ByteCount,ItemUlong             //15
+}
+01853a65-418f-4f36-aefc-dc0f1d2fd235 Config
+#typev CPU 10           "%0%15!s!(%16!s!) :: CPU # %11!d!, HyperThreadingFlag %17!d!, Speed %10!d!Mhz, Memory %12!d!K, PageSize %13!d!K, AllocationGranularity %14!d!"
+{
+    MHz, ItemULong                      //10
+    NumberOfProcessors, ItemULong       //11
+    MemSize, ItemULong                  //12
+    PageSize, ItemULong                 //13
+    AllocationGranularity, ItemULong    //14
+    ComputerName, ItemWChar[256]        //15
+    DomainName, ItemWChar[132]          //16
+    HyperThreadingFlag, ItemULong       //17
+
+}
+#typev PhyDisk 11 "%0Phsical Disk %10!d!(%19!s!), SectorSize: %11!d!, SectorsperTrack: %12!d!, TracksPerCylinder %13!d! Cylinders %14!I64X!, SCSI (Port=%15!d!, Path %16!d!, Target=%17!d!, Lun=%18!d!)" 
+{
+    DiskNumber, ItemULong               //10
+    BytesPerSector, ItemULong           //11
+    SectorsPerTrack, ItemULong          //12
+    TracksPerCylinder, ItemULong        //13
+    Cylinders, ItemULongLong            //14
+    SCSIPort, ItemULong                 //15
+    SCSIPath, ItemULong                 //16
+    SCSITarget, ItemULong               //17
+    SCSILun, ItemULong                  //18
+    Manufacturer, ItemWChar[256]        //19
+    PartitionCount, ItemULong           //20
+    WriteCacheEnabled, ItemChar // was ItemBool         //21
+    BootDriveLetter, ItemWChar[3]       //22
+}
+#typev LogDisk 12   "%0Logical Disk %12!d! %15!s! "
+{
+    StartOffset, ItemULongLong          //10
+    PartitionSize, ItemULongLong        //11
+    DiskNumber, ItemULong               //12
+    Size, ItemULong                     //13
+    DriveType, ItemULong                //14
+    DriveLetterString, ItemWChar[4]     //15
+    Pad, ItemULong                      //16
+    PartitionNumber, ItemULong          //17
+    SectorsPerCluster, ItemULong        //18
+    BytesPerSector, ItemULong           //19
+    NumberOfFreeClusters, ItemLongLong  //20
+    TotalNumberOfClusters, ItemLongLong //21
+    FileSystem, ItemWChar[16]           //22
+    VolumeExt, ItemULong
+
+}
+#typev NIC 13   "%0NIC %12!d! Name = %10!s! "
+{
+    NICName, ItemWChar[256]             //10
+    Index, ItemULong                    //11
+    PhysicalAddrLen, ItemULong          //12
+    PhysicalAddr, ItemWChar[8]          //13
+    Size, ItemULong                     //14
+    IpAddress, ItemLong                 //15
+    SubnetMask, ItemLong                //16
+    DhcpServer, ItemLong                //17
+    Gateway, ItemLong                   //18
+    PrimaryWinsServer, ItemLong         //19
+    SecondaryWinsServer, ItemLong       //20
+    DnsServer1, ItemLong                //21
+    DnsServer2, ItemLong                //21
+    DnsServer3, ItemLong                //23
+    DnsServer4, ItemLong                //24
+    Data, ItemULong
+}
+#typev Video 14 "%0Video %17!s!"
+{
+    MemorySize, ItemULong               //10
+    XResolution, ItemULong              //11
+    YResolution, ItemULong              //12
+    BitsPerPixel, ItemULong             //13
+    VRefresh, ItemULong                 //14
+    ChipType, ItemWCHAR[256]            //15
+    DACType, ItemWCHAR[256]             //16
+    AdapterString, ItemWCHAR[256]       //17
+    BiosString, ItemWCHAR[256]          //18
+    DeviceId, ItemWCHAR[256]            //19
+    StateFlags, ItemULong
+}
+#typev Services 15 "%0Service (PID=%13!d!)  %10!s! %11!s! %12!s!"
+{
+    ServiceName, ItemWCHAR[34]
+    DisplayName, ItemWCHAR[256]
+    ProcessName, ItemWCHAR[34]
+    ProcessId, ItemULong
+}
+#typev Power 16 "%0Power Configuration"
+{
+    S1, ItemChar // was ItemBool
+    S2, ItemChar // was ItemBool
+    S3, ItemChar // was ItemBool
+    S4, ItemChar // was ItemBool
+    S5, ItemChar // was ItemBool
+    Pad1, ItemChar
+    Pad2, ItemChar
+    Pad3, ItemChar
+}
+#typev IRQ  21 "%0IRQ  Affinity : 0x%10!016I64X! :: IRQNum = %11!d! :: %13!s!"
+{
+    IRQAffinity, ItemLongLong
+    IRQNum, ItemULong
+    DeviceDescriptionLen, ItemULong
+    DeviceDescription, ItemWString
+}
+#typev PnP 22 "%0PnP  DeviceId: %13!s! :: Descrition: %14!s! :: Name: %15!s!"
+{
+    IDLength, ItemULong
+    DescriptionLength, ItemULong
+    FriendlyNameLength, ItemULong
+    DeviceID, ItemWString
+    DeviceDescription, ItemWString
+    FriendlyName, ItemWString
+}
+#version 3
+#typev Services 15 "%0Service (PID=%10!d!)  %13!s! %14!s! %15!s!"
+{
+    ProcessId, ItemULong
+    ServiceState, ItemULong
+    ServiceTag, ItemULong
+    ServiceName, ItemWString
+    DisplayName, ItemWString
+    ProcessName, ItemWString
+    LoadOrderGroup, ItemWString
+    SvchostrGroup, ItemWString
+}
+
+3d6fa8d4-fe05-11d0-9dda-00c04fd7ba7c DiskIo
+#version 0
+#typev Read  10 "%0Read  of %12!5d! bytes (FileObj=0x%15!p!)"
+#typev Write 11 "%0Write of %12!5d! bytes (FileObj=0x%15!p!)"
+{
+        Disk Number, ItemULong
+        Irp Flags, ItemULongX
+        Transfer Size, ItemULong
+        ResponseTime, ItemULong
+        Byte Offset, ItemLongLong
+        File Object, ItemPtr
+        HighResResponseTime, ItemLongLong
+}
+#version 1
+#typev Read  10 "%0Read  of %12!5d! bytes (FileObj=0x%15!p!)"
+#typev Write 11 "%0Write of %12!5d! bytes (FileObj=0x%15!p!)"
+{
+        Disk Number, ItemULong
+        Irp Flags, ItemULongX
+        Transfer Size, ItemULong
+        ResponseTime, ItemULong
+        Byte Offset, ItemLongLong
+        File Object, ItemPtr
+        HighResResponseTime, ItemLongLong
+}
+#version 2
+#typev Read  10 "%0Read  of %12!5d! bytes (FileObj=0x%15!p! ByteOffset=0x%14!I64X! IRP=0x%16!p! IRPFlags=0x%11!X!)"
+#typev Write 11 "%0Write of %12!5d! bytes (FileObj=0x%15!p! ByteOffset=0x%14!I64X! IRP=0x%16!p! IRPFlags=0x%11!X!)"
+{
+        Disk Number, ItemULong          //10
+        Irp Flags, ItemULongX           //11
+        Transfer Size, ItemULong        //12
+        ResponseTime, ItemULong         //13
+        Byte Offset, ItemLongLong       //14
+        File Object, ItemPtr            //15
+        IRP, ItemPtr                    //16
+        HighResResponseTime, ItemLongLong   //17
+}
+#version 2
+#typev Read  12 "%0ReadInit  of (IRP=0x%15!08X!)"
+#typev Write 13 "%0WriteInit of (IRP=0x%15!08X!)"
+{
+        IRP, ItemPtr
+}
+AE53722E-C863-11d2-8659-00C04FA321A1 Registry
+#version 0
+#typev Create            10 "%0Create  of %13!s! Handle = 0x%11!08X! Status = %10!0X!"
+#typev Open              11 "%0Open  of %13!s! Handle = 0x%11!08X! Status = %10!0X!"
+#typev Delete            12 "%0Delete of Handle = 0x%11!08X!(%14!s!) Status = %10!0X!"
+#typev Query             13 "%0Query of (%13!s!) Handle = 0x%11!08X! Status = %10!0X!"
+#typev SetValue          14 "%0SetValue  of %13!s! Handle = 0x%11!08X!(%14!s!)8X! Status = %10!0X! (TID =%3!0X!)"
+#typev QueryValue        16 "%0QueryValue of (%13!s!) Handle = 0x%11!08X! Status = %10!0X!"
+#typev EnumerateKey      17 "%0EnumerateKey  of %13!s! Handle = 0x%11!08X! Status = %10!0X!"
+#typev EnumerateValueKey 18 "%0EnumerateValueKey  of %13!s! Handle = 0x%11!08X! Status = %10!0X!"
+#typev QueryMultipleValue 19 "%0QueryMultiple  of %13!s! Handle = 0x%11!08X! Status = %10!0X!"
+#typev SetInformation    20 "%0SetInformation  of %13!s! Handle = 0x%11!08X! Status = %10!0X!"
+#typev Flush             21 "%0Flush  of %13!s! Handle = 0x%11!08X! Status = %10!0X!"
+{
+        Status,ItemUlongX
+        Key Handle, ItemULongX
+        Elapsed Time, ItemLongLong
+        KeyName, ItemWString
+}
+#version 1
+#typev Create            10 "%0Create  of %14!s! Handle = 0x%11!08X! Status = %10!0X!"
+#typev Open              11 "%0Open  of %14!s! Handle = 0x%11!08X! Status = %10!0X!"
+#typev Delete            12 "%0Delete of Handle = 0x%11!08X!(%14!s!) Status = %10!0X!"
+#typev Query             13 "%0Query of (%14!s!) Handle = 0x%11!08X! Status = %10!0X!"
+#typev SetValue          14 "%0SetValue  of %14!s! Handle = 0x%11!08X!(%14!s!)8X! Status = %10!0X! (TID =%3!0X!)"
+#typev QueryValue        16 "%0QueryValue of (%14!s!) Handle = 0x%11!08X! Status = %10!0X!"
+#typev EnumerateKey      17 "%0EnumerateKey  of %14!s! Handle = 0x%11!08X! Status = %10!0X!"
+#typev EnumerateValueKey 18 "%0EnumerateValueKey  of %14!s! Handle = 0x%11!08X! Status = %10!0X!"
+#typev QueryMultipleValue 19 "%0QueryMultiple  of %14!s! Handle = 0x%11!08X! Status = %10!0X!"
+#typev SetInformation    20 "%0SetInformation  of %14!s! Handle = 0x%11!08X! Status = %10!0X!"
+#typev Flush             21 "%0Flush  of %14!s! Handle = 0x%11!08X! Status = %10!0X!"
+#typev RunDown            22 "%0Rundown"
+{
+        Status,ItemUlongX
+        Key Handle, ItemULongX
+        Elapsed Time, ItemLongLong
+        Index, ItemULong
+        KeyName, ItemWString
+}
+#version 2
+#typev Create            10 "%0Create  of %14!s! Handle = 0x%11!08X! Status = %10!0X!"
+#typev Open              11 "%0Open  of %14!s! Handle = 0x%11!08X! Status = %10!0X!"
+#typev Delete            12 "%0Delete of Handle = 0x%11!08X!(%14!s!) Status = %10!0X!"
+#typev Query             13 "%0Query of (%14!s!) Handle = 0x%11!08X! Status = %10!0X!"
+#typev SetValue          14 "%0SetValue  of %14!s! Handle = 0x%11!08X!(%14!s!)8X! Status = %10!0X! (TID =%3!0X!)"
+#typev QueryValue        16 "%0QueryValue of (%14!s!) Handle = 0x%11!08X! Status = %10!0X!"
+#typev EnumerateKey      17 "%0EnumerateKey  of %14!s! Handle = 0x%11!08X! Status = %10!0X!"
+#typev EnumerateValueKey 18 "%0EnumerateValueKey  of %14!s! Handle = 0x%11!08X! Status = %10!0X!"
+#typev QueryMultipleValue 19 "%0QueryMultiple  of %14!s! Handle = 0x%11!08X! Status = %10!0X!"
+#typev SetInformation    20 "%0SetInformation  of %14!s! Handle = 0x%11!08X! Status = %10!0X!"
+#typev Flush             21 "%0Flush  of %14!s! Handle = 0x%11!08X! Status = %10!0X!"
+#typev KCBCreate         22 "%0KCBCreate"
+#typev KCBDelete         23 "%0KCBDelete"
+#typev KCVBRundownBegin  24 "%0KCBRundown Begin"
+#typev KCBRundownEnd     25 "%0KCBRundown End"
+#typev SetSecurity       28 "%0SetSecurity  of %14!s! Handle = 0x%11!08X! Status = %10!0X!"
+#typev QuerySecurity     28 "%0QuerySecurity  of %14!s! Handle = 0x%11!08X! Status = %10!0X!"
+{
+        Status,ItemUlongX
+        Key Handle, ItemULongX
+        Elapsed Time, ItemLongLong
+        Index, ItemULong
+        KeyName, ItemWString
+}
+90cbdc39-4a3e-11d1-84f4-0000f80464e3 FileIo
+#version 0
+#typev  Name   0 "%0Filio for %11 (FileObj=0x%10!X!)"
+{
+        FileObject, ItemPtr
+        FileName, ItemWString
+}
+#version 1
+#typev  Name            0 "%0Filio for %11 (FileObj=0x%10!X!)"
+#typev  FileCreate     32 "%0File Create of %11 (FileObj=0x%10!X!)"
+{
+        FileObject, ItemUlong
+        FileName, ItemWString
+}
+#version 2
+#typev  Name            0 "%0Filio for %11 (FileObj=0x%10!X!)"
+#typev  FileCreate     32 "%0File Create of %11 (FileObj=0x%10!X!)"
+#typev  FileCreate     35 "%0File Delete of %11 (FileObj=0x%10!X!)"
+#typev  FileCreate     36 "%0File Rundown of %11 (FileObj=0x%10!X!)"
+{
+        FileObject, ItemUlong
+        FileName, ItemWString
+}
+
+9a280ac0-c8e0-11d1-84e2-00c04fb998a2 TcpIp
+#version 0
+#typev Send 10 "%0TCPIP Send    to   %10!13s!:%12!05d! from %11!13s!:%13!05d! of %14!5d! bytes" 
+#typev Recv 11 "%0TCPIP Receive from %10!13s!:%12!05d! to   %11!13s!:%13!05d! of %14!5d! bytes" 
+#typev Connect    12  "%0TCPIP Connect to   %10:%12!05d! from %11:%13!05d!" 
+#typev Disconnect 13  "%0TCPIP Discon  From %10:%12!05d! to   %11:%13!05d!" 
+#typev Retransmit 14  "%0TCPIP Retransmit to   %10:%12!05d!" 
+#typev Accept     15  "%0TCPIP Accept  From %10:%12!05d!"
+{
+    daddr, ItemIPAddr   /10
+    saddr, ItemIPAddr   /11
+    dport, ItemUshort   /12
+    sport, ItemUshort   /13
+    size,  ItemULong    /14
+    PID,   ItemUlong    /15
+}
+#version 1
+#typev Send 10 "%0TCPIP Send    to   %12!13s!:%14!05d! from %13!13s!:%15!05d! of %11!5d! bytes" 
+#typev Recv 11 "%0TCPIP Receive from %12!13s!:%14!05d! to   %13!13s!:%15!05d! of %11!5d! bytes" 
+#typev Connect    12  "%0TCPIP Connect to   %12:%14!05d! from %13:%15!05d!" 
+#typev Disconnect 13  "%0TCPIP Discon  From %12:%14!05d! to   %13:%15!05d!" 
+#typev Retransmit 14  "%0TCPIP Retransmit to   %12:%14!05d!" 
+#typev Accept     15  "%0TCPIP Accept  From %12:%14!05d!"
+#typev Reconnect  16  "%0TCPIP Reconnect To %12:%14!05d!"
+{
+    PID,   ItemULong    /10
+    size,  ItemULong    /11
+    daddr, ItemIPAddr   /12
+    saddr, ItemIPAddr   /13
+    dport, ItemUshort   /14
+    sport, ItemUshort   /15
+}
+#version 2
+#typev Send 10 "%0TCPIP Send    to   %12!13s!:%14!05d! from %13!13s!:%15!05d! of %11!5d! bytes" 
+#typev Recv 11 "%0TCPIP Receive from %12!13s!:%14!05d! to   %13!13s!:%15!05d! of %11!5d! bytes" 
+#typev Connect    12  "%0TCPIP Connect to   %12:%14!05d! from %13:%15!05d!" 
+#typev Disconnect 13  "%0TCPIP Discon  From %12:%14!05d! to   %13:%15!05d!" 
+#typev Retransmit 14  "%0TCPIP Retransmit to   %12:%14!05d!" 
+#typev Accept     15  "%0TCPIP Accept  From %12:%14!05d!"
+#typev Reconnect  16  "%0TCPIP Reconnect To %12:%14!05d!"
+{
+    PID,   ItemULong    /10
+    size,  ItemULong    /11
+    daddr, ItemIPAddr   /12
+    saddr, ItemIPAddr   /13
+    dport, ItemUshort   /14
+    sport, ItemUshort   /15
+}
+
+bf3a50c5-a9c9-4988-a005-2df0b7c80f80 UdpIp
+#version 0
+#typev Send   10 "%0UDP Send    to   %11!13s!:%12!05d! of %16!5d! bytes" 
+#typev Recv   11 "%0UDP Receive from %11!13s!:%12!05d! of %16!5d! bytes" 
+{
+    context,    ItemPtr         /10
+    saddr,      ItemIPAddr      /11
+    sport,      ItemPort        /12
+    size,       ItemUshort      /13
+    daddr,      ItemIPAddr      /14
+    dport,      ItemPort        /15     
+    dsize,      ItemUshort      /16
+}
+#version 1
+#typev Send   10 "%0UDP Send    to   %12!13s!:%14!05d! from %13!13s!:%15!05d! of %11!5d! bytes (Pid= %10!08X!)" 
+#typev Recv   11 "%0UDP Receive from %12!13s!:%14!05d! to   %13!13s!:%15!05d! of %11!5d! bytes (Pid= %10!08X!)" 
+{
+    PID,        ItemULong       /10
+    size,       ItemUlong       /11
+    daddr,      ItemIPAddr      /12
+    saddr,      ItemIPAddr      /13
+    dport,      ItemUshort      /14     
+    sport,      ItemUshort      /15
+}
+#version 2
+#typev Send   10 "%0UDP Send    to   %12!13s!:%14!05d! from %13!13s!:%15!05d! of %11!5d! bytes (Pid= %10!08X!)" 
+#typev Recv   11 "%0UDP Receive from %12!13s!:%14!05d! to   %13!13s!:%15!05d! of %11!5d! bytes (Pid= %10!08X!)" 
+{
+    PID,        ItemULong       /10
+    size,       ItemUlong       /11
+    daddr,      ItemIPAddr      /12
+    saddr,      ItemIPAddr      /13
+    dport,      ItemUshort      /14     
+    sport,      ItemUshort      /15
+}
+
+2cb15d1d-5fc1-11d2-abe1-00a0c911f518 Image
+#version 0
+#typev Load     10 "%0ImageLoad of %12!s! (Base=0x%10!X!,size=0x%11!X!)"
+{
+    BaseAddress,        ItemPtr         /10
+    ModuleSize,         ItemPtr         /11
+    ImageFilename,      ItemWString     /12
+}
+#version 1
+#typev Load     10 "%0ImageLoad of %13!s! (Process= %12!d!, Base=0x%10!X!,size=0x%11!X!)"
+{
+    BaseAddress,        ItemPtr         /10
+    ModuleSize,         ItemPtr         /11
+    ProcessId,          ItemUlong       /12
+    ImageFilename,      ItemWString     /13
+}
+#version 2
+#typev Load     10 "%0ImageLoad of %21!s! (Process= %12!d!, Base=0x%10!X!,size=0x%11!X!)"
+#typev UnLoad   2 "%0Image UnLoad of %21!s! (Process= %12!d!, Base=0x%10!X!,size=0x%11!X!)"
+{
+    BaseAddress,        ItemPtr         /10
+    ModuleSize,         ItemPtr         /11
+    ProcessId,          ItemUlong       /12
+    ImageChecksum,      ItemUlong       /13
+    TimeDateStamp,      ItemUlong       /14
+    Reserved0,          ItemUlong       /15
+    DefaultBase,        ItemPtr         /16
+    Reserved1,          ItemUlong       /17
+    Reserved2,          ItemUlong       /18
+    Reserved3,          ItemUlong       /19
+    Reserved4,          ItemUlong       /20
+    ImageFilename,      ItemWString     /21
+}
+
+222962ab-6180-4b88-a825-346b75f2a24a Heap
+#typev HeapCreate 32 "Heap Create - Handle = %10!p!  :: flags = %11!d!"
+{
+    HeapHandle,         ItemPtr         /10
+    HeapFlags,          ItemUlong       /11
+}
+#typev HeapTrace 33 "Heap Trace - Handle = %10!p!  :: Alloc Size = %11!d! Address = %12!p!, Source Id = %13!d!"
+{
+    HeapHandle,         ItemPtr         /10
+    AllocSize,          ItemUlong       /11
+    AllocAddress,       ItemPtr         /12
+    SourceId,           ItemUlong       /13
+}
+#typev ReAlloc 34 "ReAlloc - Handle %10!p!  :: new Size = %13!d! :: old size = %14!d!, Source Id = %15!d!"
+{
+    HeapHandle,         ItemPtr         /10
+    NewAllocAddress,    ItemPtr         /11
+    OldAllocAddress,    ItemPtr         /12
+    NewAllocSize,       ItemUlong       /13
+    OldAllocSize,       ItemUlong
+    SourceId,           ItemUlong
+}
+#typev Free 36 "Heap Free -  Handle = %10!p!  :: Address = %11!p!, Source Id = %12!d"
+{
+    HeapHandle,         ItemPtr         /10
+    AllocAddress,       ItemPtr         /11
+    SourceId,           ItemUlong       /12
+}
+#typev Expand 37 "Expand - Handle %10!p!"
+{
+    HeapHandle,    ItemPtr         /10
+    CommittedSize, ItemUlong
+    CommitAddress, ItemPtr       
+    FreeSpace,     ItemUlong
+    CommittedSpace, ItemUlong        
+    ReservedSpace,  ItemUlong       
+    NoOfUCRs, ItemUlong
+}
+#typev SnapShot 38 "SnapShot - Handle %10!p!  :: flags = %11!d! :: free space = %12!d!, committed = %13!d!,  reserverd %14!d!"
+{
+    HeapHandle,    ItemPtr         /10
+    HeapFlags, ItemUlong
+    FreeSpace,     ItemUlong
+    CommittedSpace, ItemUlong        
+    ReservedSpace,  ItemUlong       
+}
+#typev Walk 42 "Heap Walk - Handle = %10!p!"
+{
+    HeapHandle,         ItemPtr         /10
+    DeCommittedSize, ItemUlong
+    DeCommitAddress, ItemPtr       
+    FreeSpace,     ItemUlong
+    CommittedSpace, ItemUlong        
+    ReservedSpace,  ItemUlong       
+    NoOfUCRs, ItemUlong
+}
+#typev Destroy 35 "Heap Destroy - Handle = %10!p!"
+#typev Lock 43 "Heap Lock - Handle = %10!p!"
+#typev Unlock 44 "Heap Unlock - Handle = %10!p!"
+#typev Validate 45 "Heap Validate - Handle = %10!p!"
+#typev Walk 46 "Heap Walk - Handle = %10!p!"
+{
+    HeapHandle,         ItemPtr         /10
+}
+3AC66736-CC59-4cff-8115-8DF50E39816B CritSec
+#typev Collision 34 "CritSec - LockCount = %10!d!, OwningThread = %12!p!"
+{
+        LockCount, ItemUlong
+        SpinCount, ItemUlong
+        OwningThread, ItemPtr
+        CirtSecAddr, ItemPtr
+}
+#typev Initialize 35 "Initialize - SpinCount %10!d!,  CirtSecAddr = %11!p!"
+{
+        SpinCount, ItemUlong
+        CirtSecAddr, ItemPtr
+}
+ce1dbfb4-137e-4da6-87b0-3f59aa102cbc PerfInfoEvent
+
+#typev SampleProf 46 "InstructionPointer %10!p! ThreadId= 0x%11!X! Count=%12!d!"
+{
+        InstructionPointer,ItemUlong
+        ThreadID,ItemUlong
+        Count,ItemUlong
+}
+#typev SysClEnter 51 "System Call Enter SysCallAddress=0x%10!p!"
+{
+        SysCallAddress,ItemPtr
+}
+#typev SysClExit 52 "System Call Exit NtStatus = %10!s!"
+{
+        SysCallNtStatus,ItemNTSTATUS
+}
+#typev DBGEnabled 58 "Debugger Enabled"
+{
+}
+
+#version 1
+#typev ISR 67 "ISR      Initial Time=%10!I64d!. Routine=0x%11!p!  Return Value=0x%12!d!."
+{
+        InitialTime,ItemULongLong
+        Routine,ItemPtr
+        ReturnValue,ItemUchar
+}
+
+#version 2
+#typev ISR 67 "ISR      Initial Time=%10!I64d!. Routine=0x%11!p!  Return Value=0x%12!d! Vector=0x%13!d!"
+{
+        InitialTime,ItemULongLong
+        Routine,ItemPtr
+        ReturnValue,ItemUchar
+        Vector,ItemUchar
+}
+
+
+#typev DPC 68 "DPC      Initial Time=%10!I64d!. Routine=0x%11!p!"
+#typev TimerDPC 69 "TimerDPC Initial Time=%10!I64d!. Routine=0x%11!p!"         
+#typev ThreadedDPC 66 "ThreadedDPC Initial Time=%10!I64d!. Routine=0x%11!p!"
+{
+        InitialTime,ItemULongLong
+        Routine,ItemPtr
+}
+//******************************************
+// RAC Events
+//******************************************
+22fb2cd6-0e7b-422b-a0c7-2fad1fd0e716 PSProvider
+#version 0
+#typev ProcessStart 1 "Process Start Pid=0x%10!04x! Created=%11!s! ParentPid=0x%12!04x! SessionId=%13!d!. Image=%14!s!"
+{
+        ProcessId,ItemUlong
+        CreateTime,ItemTimeStamp
+        ParentProcessID,ItemUlong
+        SessionID,ItemUlong
+        ImageName,ItemWString
+}
+#version 0
+#typev ProcessStop  2 "Process Stop  Pid=0x%10!04x! Created=%11!s! Exited=%12!s! ExitCode=0x%13!x! Image=%18!s!"
+{
+        ProcessId,ItemUlong                     /10
+        CreateTime,ItemTimeStamp                /11
+        ExitTime,ItemTimeStamp                  /12
+        ExitCode,ItemULong                      /13
+        TokenElevationType,ItemUlong            /14
+        HandleCount,ItemUlong                   /15
+        CommitCharge,ItemUlongLong              /16
+        CommitPeak,ItemUlongLong                /17
+        ImageName,ItemString                    /18
+}
+#version 1
+#typev ProcessStop  2 "Process Stop  Pid=0x%10!04x! Created=%11!s! Exited=%12!s! ExitCode=0x%13!x! Image=%24!s!"
+{
+        ProcessId,ItemUlong                     /10
+        CreateTime,ItemTimeStamp                /11
+        ExitTime,ItemTimeStamp                  /12
+        ExitCode,ItemULong                      /13
+        TokenElevationType,ItemUlong            /14
+        HandleCount,ItemUlong                   /15
+        CommitCharge,ItemUlongLong              /16
+        CommitPeak,ItemUlongLong                /17
+        CycleTime,ItemUlongLong                 /18
+        ReadCount,ItemUlong                     /19
+        WriteCount,ItemUlong                    /20
+        ReadSize,ItemUlong                      /21
+        WriteSize,ItemUlong                     /22
+        HardFaultCount,ItemUlong                /23
+        ImageName,ItemString                    /24
+}
+
+
+9c205a39-1250-487d-abd7-e831c6290539 PNP
+#typev PNP 1 "%0pnp start %10!s! 0x%11!x! %12!s! 0x%13!x!"
+#typev PNP 2 "%0pnp stop  %10!s! 0x%11!x! %12!s! 0x%13!x!"
+{
+        Name,ItemCWString
+        Unknown,ItemUlong
+        file,ItemCWString
+        Unknown2,ItemUlong
+}</value>
+  </data>
+  <data name="CDFMonitorTMFGuid" xml:space="preserve">
+    <value>8263A91E-66CC-4BE4-919B-E962E5F40CC7</value>
+  </data>
+  <data name="EventTraceHeaderTMFGuid" xml:space="preserve">
+    <value>68fdd900-4a3e-11d1-84f4-0000f80464e3</value>
+  </data>
+  <data name="MagicTMFGuid" xml:space="preserve">
+    <value>1c7af7a9-d188-4604-a430-9c378087ca5d</value>
+  </data>
+  <data name="ProcessTMF" xml:space="preserve">
+    <value>3d6fa8d0-fe05-11d0-9dda-00c04fd7ba7c Process
+#version        3
+
+#typev Start   99  "%0Started Process %11!X!.%12!X! "%17!s!" :: %16!s! (Session=%13!d!) "
+{
+ProcessId, ItemPtr -- 10
+ParentId, ItemPtr -- 11
+UserSID, ItemKSid -- 12
+ImageFileName, ItemString -- 13
+}
+
+#typev Start   1  "%0Started Process %11!X!.%12!X! "%17!s!" :: %16!s! (Session=%13!d!) "
+{
+UniqueProcessKey, ItemPtr -- 10
+Process Id, ItemULong -- 11
+Parent Id, ItemULong -- 12
+Session Id, ItemULong -- 13
+Exit Status, ItemUlong -- 14
+PageTable, ItemPtr -- 15
+User SID, ItemKSid -- 16
+Image FileName, ItemString -- 17
+}
+
+#typev End     98  "%0Ended   Process %11!X!.%12!X! "%17!s!" :: %16!s! (Session=%13!d!) Exit Status %14!X!"    
+{
+ProcessId, ItemPtr -- 10
+ParentId, ItemPtr -- 11
+UserSID, ItemKSid -- 12
+ImageFileName, ItemString -- 13
+}
+
+#typev End     2  "%0Ended   Process %11!X!.%12!X! "%17!s!" :: %16!s! (Session=%13!d!) Exit Status %14!X!"    
+{
+UniqueProcessKey, ItemPtr -- 10
+Process Id, ItemULong -- 11
+Parent Id, ItemULong -- 12
+Session Id, ItemULong -- 13
+Exit Status, ItemUlong -- 14
+PageTable, ItemPtr -- 15
+User SID, ItemKSid -- 16
+Image FileName, ItemString -- 17
+}
+
+#typev DCStart 3  "%0Data Collection Started of %11!X!.%12!X! "%17!s!"  :: %16!s! (Session=%13!d!)"
+{
+UniqueProcessKey, ItemPtr -- 10
+Process_Id, ItemULong -- 11
+Parent_Id, ItemULong -- 12
+Session_Id, ItemULong -- 13
+Exit_Status, ItemUlong -- 14
+PageTable, ItemPtr -- 15
+User_SID, ItemKSid -- 16
+Image_FileName, ItemString -- 17
+}
+
+#typev DCEnd   4  "%0Data Colection Ended for %11!X!.%12!X! "%17!s!" :: %16!s! (Session=%13!d!)"
+{
+UniqueProcessKey, ItemPtr -- 10
+Process_Id, ItemULong -- 11
+Parent_Id, ItemULong -- 12
+Session_Id, ItemULong -- 13
+Exit_Status, ItemUlong -- 14
+PageTable, ItemPtr -- 15
+User_SID, ItemKSid -- 16
+Image_FileName, ItemString -- 17
+}</value>
+  </data>
+  <data name="ProcessTMFGuid" xml:space="preserve">
+    <value>3d6fa8d0-fe05-11d0-9dda-00c04fd7ba7c</value>
+  </data>
+  <data name="TcpTMF" xml:space="preserve">
+    <value>#9a280ac0-c8e0-11d1-84e2-00c04fb998a2 TcpIp
+#version 2
+
+#typev Send 10 "%0TCPIP PID:%10!d! Send to %12!s!:%14!d! from %13!s!:%15!d! start:%16!X! end:%17!X! connection:%18!X! sequence:%19!X! size:%11!d!" 
+{
+PID,   ItemULong -- 10
+size,  ItemULong -- 11
+daddr, ItemIPAddr -- 12
+saddr, ItemIPAddr -- 13
+dport, ItemUShort -- 14
+sport, ItemUShort -- 15
+startTime,  ItemULong -- 16
+endTime,  ItemULong -- 17
+connId,  ItemULong -- 18
+seq,  ItemULong -- 19
+}
+
+#typev Receive 11 "%0TCPIP PID:%10!d! Receive from %13!s!:%15!d! to %12!s!:%14!d! start:%16!X! end:%17!X! connection:%18!X! sequence:%19!X! size:%11!d!" 
+{
+PID,   ItemULong -- 10
+size,  ItemULong -- 11
+daddr, ItemIPAddr -- 12
+saddr, ItemIPAddr -- 13
+dport, ItemUShort -- 14
+sport, ItemUShort -- 15
+startTime,  ItemULong -- 16
+endTime,  ItemULong -- 17
+connId,  ItemULong -- 18
+seq,  ItemULong -- 19
+}
+
+#typev Connect    12  "%0TCPIP PID:%10!d! Connect to %12!s!:%14!d! from %13!s!:%15!d! size:%11!d!" 
+{
+PID,   ItemULong -- 10
+size,  ItemULong -- 11
+daddr, ItemIPAddr -- 12
+saddr, ItemIPAddr -- 13
+dport, ItemUShort -- 14
+sport, ItemUShort -- 15
+}
+
+#typev Disconnect 13  "%0TCPIP  PID:%10!d! Discon  From %12!s!:%14!d! To %13!s!:%15!d! size:%11!d!" 
+{
+PID,   ItemULong -- 10
+size,  ItemULong -- 11
+daddr, ItemIPAddr -- 12
+saddr, ItemIPAddr -- 13
+dport, ItemUShort -- 14
+sport, ItemUShort -- 15
+}
+#typev Retransmit 14  "%0TCPIP  PID:%10!d! Retransmit to %12!s!:%14!d! From %13!s!:%15!d! size:%11!d!" 
+{
+PID,   ItemULong -- 10
+size,  ItemULong -- 11
+daddr, ItemIPAddr -- 12
+saddr, ItemIPAddr -- 13
+dport, ItemUShort -- 14
+sport, ItemUShort -- 15
+}
+
+#typev Accept     15  "%0TCPIP PID:%10!d! Accept From %12!s!:%14!d! To %13!s!:%15!d! size:%11!d!" 
+{
+PID,   ItemULong -- 10
+size,  ItemULong -- 11
+daddr, ItemIPAddr -- 12
+saddr, ItemIPAddr -- 13
+dport, ItemUShort -- 14
+sport, ItemUShort -- 15
+}
+
+#typev Reconnect  16  "%0TCPIP PID:%10!d! Reconnect To %12!s!:%14!d! From %13!s!:%15!d! size:%11!d!" 
+{
+PID,   ItemULong -- 10
+size,  ItemULong -- 11
+daddr, ItemIPAddr -- 12
+saddr, ItemIPAddr -- 13
+dport, ItemUShort -- 14
+sport, ItemUShort -- 15
+}
+#typev Fail  17  "%0TCPIP Fail To %10"
+{
+protocol,   ItemULong -- 10
+}
+
+#typev Copy 18 "%0TCPIP PID:%10!d! Copy/Ack to %12!s!:%14!d! from %13!s!:%15!d! start:%16!X! end:%17!X! size:%11!d!" 
+{
+PID,   ItemULong -- 10
+size,  ItemULong -- 11
+daddr, ItemIPAddr -- 12
+saddr, ItemIPAddr -- 13
+dport, ItemUShort -- 14
+sport, ItemUShort -- 15
+connId,  ItemULong -- 16
+seq,  ItemULong -- 17
+}</value>
+  </data>
+  <data name="TcpTMFGuid" xml:space="preserve">
+    <value>9a280ac0-c8e0-11d1-84e2-00c04fb998a2</value>
+  </data>
+  <data name="ThreadTMF" xml:space="preserve">
+    <value>3d6fa8d1-fe05-11d0-9dda-00c04fd7ba7c Thread
+#version 0
+
+#version 2
+#typev Start   1  "%0Started Thread %10!X!.%11!X! "
+{
+    ProcessId, ItemULong -- 10
+    ThreadId, ItemULong -- 11
+    StackBase, ItemPtr -- 12
+    StackLimit, ItemPtr -- 13
+    UserStackBase, ItemPtr -- 14
+    UserStackLimit, ItemPtr -- 15
+    StartAddr, ItemPtr -- 16
+    Win32StartAddr, ItemPtr -- 17
+    TebBase, ItemPtr -- 18
+    WaitMode, ItemChar -- 19 
+}
+
+#typev End     2  "%0Ended   Thread %10!X!.%11!X! " 
+{
+    ProcessId, ItemULong -- 10
+    ThreadId, ItemULong -- 11
+    StackBase, ItemPtr -- 12
+    StackLimit, ItemPtr -- 13
+    UserStackBase, ItemPtr -- 14
+    UserStackLimit, ItemPtr -- 15
+    StartAddr, ItemPtr -- 16
+    Win32StartAddr, ItemPtr -- 17
+    TebBase, ItemPtr -- 18
+    WaitMode, ItemChar -- 19 
+}
+
+#typev DCStart 3  "%0Data Collection Started of %10!X!.%11!X! "
+{
+    ProcessId, ItemULong -- 10
+    ThreadId, ItemULong -- 11
+    StackBase, ItemPtr -- 12
+    StackLimit, ItemPtr -- 13
+    UserStackBase, ItemPtr -- 14
+    UserStackLimit, ItemPtr -- 15
+    StartAddr, ItemPtr -- 16
+    Win32StartAddr, ItemPtr -- 17
+    TebBase, ItemPtr -- 18
+    WaitMode, ItemChar -- 19 
+}
+
+#typev DCEnd   4  "%0Data Colection Ended for %10!X!.%11!X! "
+{
+    ProcessId, ItemULong -- 10
+    ThreadId, ItemULong -- 11
+    StackBase, ItemPtr -- 12
+    StackLimit, ItemPtr -- 13
+    UserStackBase, ItemPtr -- 14
+    UserStackLimit, ItemPtr -- 15
+    StartAddr, ItemPtr -- 16
+    Win32StartAddr, ItemPtr -- 17
+    TebBase, ItemPtr -- 18
+    WaitMode, ItemChar -- 19 
+}
+#version 2
+#typev CSwitch    36    "%0 Context Switch from %11!d!. to %10!d!. "
+{
+    NewThreadId, ItemULongX -- 10
+    OldThreadId, ItemULongX -- 11
+    NewThreadPriority, ItemCharShort -- 12
+    OldThreadPriority, ItemCharShort -- 13
+    PreviousCState, ItemCharShort -- 14
+    SpareByte, ItemCharShort -- 15
+    OldThreadWaitReason, ItemCharShort -- 16
+    OldThreadWaitMode, ItemCharShort -- 17
+    OldThreadState, ItemCharShort -- 18
+    OldThreadWaitIdealProcessor, ItemCharShort --19
+    NewThreadWaitTime, ItemULongX -- 20
+} 
+#version 1
+#typev CompCS    37    "%0 Compressed CS Event."
+{
+}
+
+#version 2
+#typev ReserveCreate 48    "%0 ReserveCreate Reserve =%10!p! ::Period %11!d! :: ObjectFlags = %13!d!  :: Processor  %14!d!"
+{
+    Reserve , ItemPtr -- 10
+    Period, ItemULong -- 11
+    Budget, ItemULong -- 12
+    ObjectFlags, ItemULong -- 13
+    Processor, ItemChar -- 15
+}
+#version 2
+#typev ReserveDelete 49    "%0 ReserveDelete Reserve =%10!p!"
+{
+    Reserve , ItemPtr -- 10
+}
+
+#version 1
+#typev WorkerThread 57    "%0 WorkerThread ThreadId = %10!d!  :: ThreadRoutine  %12!d!"
+{
+    ThreadId , ItemULongX -- 10
+    StartTime, ItemULongLong -- 11
+    ThreadRoutine, ItemULongX -- 12
+}
+#version       2
+
+
+
+
+#version 2
+#typev ReserveJoinThread 52    "%0 ReserveJoinThread Reserve =%10!p! :: ThreadId = %11!d!"
+{
+    Reserve , ItemPtr -- 10
+    ThreadId, ItemULong -- 11
+}
+#version 2
+#typev ReserveDisjoinThread 53    "%0 ReserveDisjoinThread Reserve =%10!p! :: ThreadId = %11!d!"
+{
+    Reserve , ItemPtr -- 10
+    ThreadId, ItemULong -- 11
+}
+#version 2
+#typev ReserveState 54    "%0 ReserveState Reserve =%10!p! :: DispatchState = %11!d!"
+{
+    Reserve , ItemPtr -- 10
+    DispatchState, ItemChar -- 11
+    Replenished, ItemChar  -- 12
+}
+#version 2
+#typev ReserveBandwidth 55    "%0 ReserveBandwidth Reserve =%10!p! :: Period = %11!d!"
+{
+    Reserve , ItemPtr -- 10
+    Period, ItemULong -- 11
+    Budget, ItemULong -- 12
+}
+#version 2
+#typev ReserveLateCount 56    "%0 ReserveLateCount Reserve =%10!p! :: LateCountIncrement = %11!d!"
+{
+    Reserve , ItemPtr -- 10
+    LateCountIncrement, ItemULong -- 11
+}</value>
+  </data>
+  <data name="ThreadTMFGuid" xml:space="preserve">
+    <value>3d6fa8d1-fe05-11d0-9dda-00c04fd7ba7c</value>
+  </data>
+  <data name="UdpTMF" xml:space="preserve">
+    <value>bf3a50c5-a9c9-4988-a005-2df0b7c80f80 UdpIp
+#version 0
+#version 2
+
+#typev Send 10 "%0UDP PID:%10!d! Send to %12!s!:%14!d! from %13!s!:%15!d! start:%16!X! end:%17!X! connection:%18!X! sequence:%19!X! size:%11!d!" 
+{
+PID,   ItemULong -- 10
+size,  ItemULong -- 11
+daddr, ItemIPAddr -- 12
+saddr, ItemIPAddr -- 13
+dport, ItemUShort -- 14
+sport, ItemUShort -- 15
+startTime,  ItemULong -- 16
+endTime,  ItemULong -- 17
+connId,  ItemULong -- 18
+seq,  ItemULong -- 19
+}
+
+#typev Receive 11 "%0UDP PID:%10!d! Receive from %13!s!:%15!d! to %12!s!:%14!d! start:%16!X! end:%17!X! connection:%18!X! sequence:%19!X! size:%11!d!" 
+{
+PID,   ItemULong -- 10
+size,  ItemULong -- 11
+daddr, ItemIPAddr -- 12
+saddr, ItemIPAddr -- 13
+dport, ItemUShort -- 14
+sport, ItemUShort -- 15
+startTime,  ItemULong -- 16
+endTime,  ItemULong -- 17
+connId,  ItemULong -- 18
+seq,  ItemULong -- 19
+}</value>
+  </data>
+  <data name="UdpTMFGuid" xml:space="preserve">
+    <value>bf3a50c5-a9c9-4988-a005-2df0b7c80f80</value>
+  </data>
+  <data name="EventTraceHeaderTMF" xml:space="preserve">
+    <value>68fdd900-4a3e-11d1-84f4-0000f80464e3 EventTrace
+#typev LogFileHeader    0      "%0EventTrace Header"
+{
+    BufferSize,     ItemULong -- 10
+    Version,        ItemULong -- 11
+    BuildNumber,    ItemULong -- 12
+    NumProc,        ItemULong -- 13
+    EndTime,        ItemULongLong -- 14
+    TimerResolution,ItemULong -- 15
+    MaxFileSize,    ItemULong -- 16
+    LogFileMode,    ItemULongX -- 17
+    BuffersWritten, ItemULong -- 18
+    StartBuffers,   ItemULong -- 19
+    PointerSize,    ItemULong -- 20
+    EventsLost,     ItemULong -- 21
+    CPUSpeed,       ItemULong -- 22
+    LoggerName,     ItemPtr -- 23
+    LogFileName,    ItemPtr -- 24
+    TimeZone,       ItemPString -- 25
+    BootTime,       ItemULongLong -- 26
+    PerfFrequency,  ItemULongLong -- 27
+    StartTime,      ItemULongLong -- 28
+    ReservedFlags,  ItemULongX -- 29
+    BuffersLost,    ItemULong -- 30
+}
+#typev Extension     5 "extension"
+{
+    GroupMaks1,      ItemULongX -- 10
+    GroupMaks2,      ItemULongX -- 11
+    GroupMaks3,      ItemULongX -- 12
+    GroupMaks4,      ItemULongX -- 13
+    GroupMaks5,      ItemULongX -- 14
+    GroupMaks6,      ItemULongX -- 15
+    GroupMaks7,      ItemULongX -- 16
+    GroupMaks8,      ItemULongX -- 17
+}
+#typev RDComplete    8 "rdcomplete"
+{
+}</value>
+  </data>
+  <data name="KernelSessionFileName" xml:space="preserve">
+    <value>kernel.etl</value>
+  </data>
+  <data name="KernelSessionGuid" xml:space="preserve">
+    <value>9e814aad-3204-11d2-9a82-006008a86939</value>
+  </data>
+  <data name="KernelSessionName" xml:space="preserve">
+    <value>NT Kernel Logger</value>
+  </data>
+  <data name="SessionGuid" xml:space="preserve">
+    <value>c5a17538-0601-40ba-87c4-79b51c7448dd</value>
+  </data>
+  <data name="ProductGuid" xml:space="preserve">
+    <value>F00DDE93-3F40-48F6-8CDC-4886534185B9</value>
+  </data>
+</root>
